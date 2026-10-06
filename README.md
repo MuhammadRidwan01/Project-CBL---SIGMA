@@ -1,4 +1,4 @@
-# Project CBL — Sihma promagh
+# Project CBL — [SIGMA]
 
 Tugas Akhir Basic Bootcamp Komandro 2026 — Git & GitHub.
 
