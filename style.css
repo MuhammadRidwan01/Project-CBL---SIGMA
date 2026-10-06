@@ -1,18 +1,32 @@
 /* ==========================================================================
-   APPLE DESIGN SYSTEM & HUMAN INTERFACE GUIDELINES STYLING
+   DESIGN ENGINEERING SPECIFICATION — EMIL KOWALSKI CRAFT FRAMEWORK
+   Encoded with sub-300ms timings, custom easing curves, and tactile precision.
    ========================================================================== */
 
 :root {
   --apple-black: #000000;
   --apple-dark: #0b0b0c;
-  --apple-card: #161617;
-  --apple-card-hover: #1c1c1e;
-  --apple-border: rgba(255, 255, 255, 0.1);
-  --apple-border-light: rgba(255, 255, 255, 0.2);
+  --apple-card: #141416;
+  --apple-card-hover: #1c1c1f;
+  --apple-border: rgba(255, 255, 255, 0.08);
+  --apple-border-light: rgba(255, 255, 255, 0.18);
+  --apple-border-rim: rgba(255, 255, 255, 0.24);
   --apple-text: #f5f5f7;
   --apple-muted: #86868b;
   --apple-subtle: #6e6e73;
   --apple-blue: #2997ff;
+  --apple-blue-hover: #0077ed;
+  --apple-blue-glow: rgba(41, 151, 255, 0.35);
+
+  /* Emil Kowalski Signature Easing Curves */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-press: cubic-bezier(0, 0, 0.2, 1);
+
+  /* Typography Optical Sizing */
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
 }
 
 html {
@@ -28,39 +42,271 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Apple Frosted Glass (Keynote Material) */
-.apple-blur {
-  backdrop-filter: saturate(180%) blur(20px);
-  -webkit-backdrop-filter: saturate(180%) blur(20px);
+/* ==========================================================================
+   1. BUTTON PRESS RESPONSIVENESS — NEVER LOCK OR LAG (:active @ 120ms)
+   ========================================================================== */
+button,
+a.rounded-full,
+.apple-step-card,
+.tier-btn,
+.apple-press {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform;
+  transition: transform 160ms var(--ease-out), background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 
-/* Apple-style Smooth Scrollbar */
+button:active,
+a.rounded-full:active,
+.apple-step-card:active,
+.tier-btn:active,
+.apple-press:active {
+  transform: scale(0.97) !important;
+  transition-duration: 100ms !important;
+  transition-timing-function: var(--ease-press) !important;
+}
+
+/* ==========================================================================
+   2. MATERIALS & FROSTED SURFACES (Optimized blur budget)
+   ========================================================================== */
+.apple-blur {
+  backdrop-filter: saturate(190%) blur(20px);
+  -webkit-backdrop-filter: saturate(190%) blur(20px);
+}
+
+.apple-glass-card {
+  background: rgba(20, 20, 22, 0.7);
+  backdrop-filter: saturate(190%) blur(20px);
+  -webkit-backdrop-filter: saturate(190%) blur(20px);
+  border: 1px solid var(--apple-border);
+  border-top: 1px solid var(--apple-border-light);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: var(--apple-black);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* Keynote Stage Panel Spring Transitions */
+/* Dynamic Spotlight Card Effect */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--apple-border-light);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  transition: border-color 200ms ease, transform 200ms var(--ease-out), box-shadow 200ms ease;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(41, 151, 255, 0.12),
+    transparent 45%
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 180ms var(--ease-out);
+  z-index: 1;
+}
+
+/* Gated Hover — Prevents false-positive sticky hover on touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .spotlight-card:hover::before {
+    opacity: 1;
+  }
+  .spotlight-card:hover {
+    border-color: var(--apple-border-light);
+  }
+  .apple-step-card:hover {
+    transform: translateX(4px);
+  }
+}
+
+/* ==========================================================================
+   3. KEYNOTE STAGE & SEGMENTED CONTROLS (Sub-250ms Transitions)
+   ========================================================================== */
 .stage-panel {
-  will-change: transform, opacity;
-  transition-property: transform, opacity;
-  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity, filter;
+  transition: transform 240ms var(--ease-out), opacity 200ms var(--ease-out), filter 200ms var(--ease-out);
 }
 
 .apple-step-card {
+  cursor: pointer;
   will-change: transform, background-color, border-color;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 200ms var(--ease-out), background-color 200ms ease, border-color 200ms ease;
 }
 
-.apple-step-card:hover {
-  transform: translateX(3px);
+/* Apple Segmented Pill Indicator — Explicit left/width transitions */
+#segmented-pill {
+  will-change: left, width;
+  transition: left 240ms var(--ease-out), width 240ms var(--ease-out);
+}
+
+/* ==========================================================================
+   4. MODAL SHEET — ASYMMETRIC TIMING & SCALE(0.95) ENTRANCE
+   ========================================================================== */
+#project-modal {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms var(--ease-out);
+}
+
+#project-modal.modal-open {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 220ms var(--ease-out);
+}
+
+#project-modal-content {
+  transform: scale(0.95) translateY(12px);
+  opacity: 0;
+  border-top: 1px solid var(--apple-border-rim);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.12), 0 32px 64px -16px rgba(0, 0, 0, 0.75);
+  /* Asymmetric exit timing: snappy 180ms */
+  transition: transform 180ms var(--ease-out), opacity 160ms ease;
+}
+
+#project-modal.modal-open #project-modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+  /* Asymmetric enter timing: deliberate 240ms with drawer curve */
+  transition: transform 240ms var(--ease-drawer), opacity 200ms var(--ease-out);
+}
+
+/* ==========================================================================
+   5. STAGGERED ENTRANCES (30-50ms cascading delay)
+   ========================================================================== */
+.stagger-1 { animation: enterCascade 240ms var(--ease-out) 0ms backwards; }
+.stagger-2 { animation: enterCascade 240ms var(--ease-out) 40ms backwards; }
+.stagger-3 { animation: enterCascade 240ms var(--ease-out) 80ms backwards; }
+.stagger-4 { animation: enterCascade 240ms var(--ease-out) 120ms backwards; }
+
+@keyframes enterCascade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   6. TYPOGRAPHY OPTICAL TRACKING
+   ========================================================================== */
+.apple-headline {
+  letter-spacing: -0.038em;
+  line-height: 1.04;
+}
+
+.apple-subheadline {
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+}
+
+.apple-eyebrow {
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   7. SCROLL REVEAL (GPU-Accelerated, Fire-Once, Emil Kowalski Recipe)
+   ========================================================================== */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  will-change: transform, opacity;
+  transition: opacity 280ms var(--ease-out), transform 280ms var(--ease-out);
+}
+
+.section-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-reveal.is-visible .reveal-child-1 {
+  animation: childCascade 260ms var(--ease-out) 40ms backwards;
+}
+.section-reveal.is-visible .reveal-child-2 {
+  animation: childCascade 260ms var(--ease-out) 80ms backwards;
+}
+.section-reveal.is-visible .reveal-child-3 {
+  animation: childCascade 260ms var(--ease-out) 120ms backwards;
+}
+
+@keyframes childCascade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   8. ACCESSIBILITY — PREFERS-REDUCED-MOTION & REDUCED TRANSPARENCY
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .stage-panel,
+  #project-modal,
+  #project-modal-content,
+  .apple-step-card,
+  #segmented-pill,
+  .section-reveal,
+  .section-reveal.is-visible,
+  .section-reveal.is-visible [class*="reveal-child-"] {
+    transition: opacity 150ms ease !important;
+    transform: none !important;
+    animation: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .apple-blur,
+  header,
+  #project-modal,
+  .spotlight-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: var(--apple-dark) !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --apple-border: rgba(255, 255, 255, 0.38);
+    --apple-border-light: rgba(255, 255, 255, 0.65);
+    --apple-border-rim: rgba(255, 255, 255, 0.9);
+  }
+
+  .spotlight-card,
+  header,
+  .apple-step-card,
+  #project-modal-content {
+    border-width: 1.5px !important;
+  }
 }
