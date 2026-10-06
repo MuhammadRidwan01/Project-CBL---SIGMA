@@ -1,39 +1,18 @@
 /* ==========================================================================
-   SHADCN UI THEME & AVANT-GARDE DARDERDOR STYLING
+   APPLE DESIGN SYSTEM & HUMAN INTERFACE GUIDELINES STYLING
    ========================================================================== */
 
-@layer base {
-  :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-
-    --card: 240 10% 5%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-
-    --radius: 0.75rem;
-  }
+:root {
+  --apple-black: #000000;
+  --apple-dark: #0b0b0c;
+  --apple-card: #161617;
+  --apple-card-hover: #1c1c1e;
+  --apple-border: rgba(255, 255, 255, 0.1);
+  --apple-border-light: rgba(255, 255, 255, 0.2);
+  --apple-text: #f5f5f7;
+  --apple-muted: #86868b;
+  --apple-subtle: #6e6e73;
+  --apple-blue: #2997ff;
 }
 
 html {
@@ -42,38 +21,46 @@ html {
 }
 
 body {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Inter, sans-serif;
+  background-color: var(--apple-black);
+  color: var(--apple-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Scrollbar */
+/* Apple Frosted Glass (Keynote Material) */
+.apple-blur {
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* Apple-style Smooth Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: hsl(var(--background));
+  background: var(--apple-black);
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--secondary));
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: rgba(255, 255, 255, 0.3);
 }
 
-/* Stage Panels Micro-Transitions */
+/* Keynote Stage Panel Spring Transitions */
 .stage-panel {
   will-change: transform, opacity;
   transition-property: transform, opacity;
   transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.step-nav-item {
-  cursor: pointer;
+.apple-step-card {
   will-change: transform, background-color, border-color;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.step-nav-item:hover {
-  transform: translateX(4px);
+.apple-step-card:hover {
+  transform: translateX(3px);
 }
