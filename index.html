@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIGMA Studio — Avant-Garde Design &amp; Digital Experience</title>
-  <meta name="description" content="SIGMA Studio adalah agensi desain digital kelas dunia dengan interaksi scroll mutakhir dan sistem desain shadcn/ui.">
+  <title>SIGMA — Desain Kelas Pro</title>
+  <meta name="description" content="SIGMA Studio. Merancang antarmuka digital, sistem desain, dan identitas merek dengan standar presisi Apple.">
 
-  <!-- Google Fonts: Plus Jakarta Sans & Syne -->
+  <!-- Inter & SF Pro fallback fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS via CDN (Shadcn Configuration) -->
+  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -19,67 +19,29 @@
       theme: {
         extend: {
           colors: {
-            border: "hsl(var(--border))",
-            input: "hsl(var(--input))",
-            ring: "hsl(var(--ring))",
-            background: "hsl(var(--background))",
-            foreground: "hsl(var(--foreground))",
-            primary: {
-              DEFAULT: "hsl(var(--primary))",
-              foreground: "hsl(var(--primary-foreground))",
-            },
-            secondary: {
-              DEFAULT: "hsl(var(--secondary))",
-              foreground: "hsl(var(--secondary-foreground))",
-            },
-            destructive: {
-              DEFAULT: "hsl(var(--destructive))",
-              foreground: "hsl(var(--destructive-foreground))",
-            },
-            muted: {
-              DEFAULT: "hsl(var(--muted))",
-              foreground: "hsl(var(--muted-foreground))",
-            },
-            accent: {
-              DEFAULT: "hsl(var(--accent))",
-              foreground: "hsl(var(--accent-foreground))",
-            },
-            popover: {
-              DEFAULT: "hsl(var(--popover))",
-              foreground: "hsl(var(--popover-foreground))",
-            },
-            card: {
-              DEFAULT: "hsl(var(--card))",
-              foreground: "hsl(var(--card-foreground))",
-            },
-          },
-          borderRadius: {
-            lg: "var(--radius)",
-            md: "calc(var(--radius) - 2px)",
-            sm: "calc(var(--radius) - 4px)",
+            apple: {
+              black: "#000000",
+              dark: "#0b0b0c",
+              card: "#161617",
+              cardHover: "#1c1c1e",
+              border: "rgba(255, 255, 255, 0.1)",
+              borderLight: "rgba(255, 255, 255, 0.18)",
+              text: "#f5f5f7",
+              muted: "#86868b",
+              subtle: "#6e6e73",
+              blue: "#2997ff",
+              blueHover: "#0077ed",
+              purple: "#a855f7",
+            }
           },
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            display: ['Syne', 'sans-serif'],
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Inter', 'sans-serif'],
           },
-          animation: {
-            'glow-pulse': 'glow 8s ease-in-out infinite alternate',
-            'shimmer': 'shimmer 2.5s linear infinite',
-            'radar': 'radar 3s ease-out infinite',
-          },
-          keyframes: {
-            glow: {
-              '0%': { transform: 'scale(1) translate(0%, 0%)', opacity: '0.4' },
-              '100%': { transform: 'scale(1.2) translate(5%, -5%)', opacity: '0.8' },
-            },
-            shimmer: {
-              '0%': { backgroundPosition: '-200% 0' },
-              '100%': { backgroundPosition: '200% 0' },
-            },
-            radar: {
-              '0%': { transform: 'scale(0.8)', opacity: '0.8' },
-              '100%': { transform: 'scale(2.2)', opacity: '0' },
-            }
+          borderRadius: {
+            'apple-sm': '12px',
+            'apple-md': '20px',
+            'apple-lg': '28px',
+            'apple-xl': '34px',
           }
         },
       },
@@ -91,319 +53,291 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-background text-foreground antialiased selection:bg-indigo-500 selection:text-white min-h-screen relative overflow-x-hidden">
+<body class="bg-apple-black text-apple-text antialiased selection:bg-apple-blue selection:text-white min-h-screen relative overflow-x-hidden font-sans">
 
-  <!-- DYNAMIC AURORA & LASER BACKGROUND LIGHTS -->
-  <div class="pointer-events-none fixed -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[550px] bg-gradient-to-tr from-indigo-600/25 via-purple-600/20 to-pink-500/10 blur-[150px] rounded-full z-0 animate-glow-pulse" aria-hidden="true"></div>
-  <div class="pointer-events-none fixed top-[45%] -left-48 w-[600px] h-[500px] bg-cyan-500/15 blur-[160px] rounded-full z-0" aria-hidden="true"></div>
-  <div class="pointer-events-none fixed bottom-10 -right-48 w-[700px] h-[600px] bg-indigo-600/20 blur-[170px] rounded-full z-0" aria-hidden="true"></div>
+  <!-- Apple Ambient Spotlights (Subtle Keynote Glow) -->
+  <div class="pointer-events-none fixed -top-48 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-b from-apple-blue/20 via-indigo-500/10 to-transparent blur-[160px] rounded-full z-0" aria-hidden="true"></div>
+  <div class="pointer-events-none fixed top-1/2 -right-48 w-[600px] h-[500px] bg-purple-500/10 blur-[180px] rounded-full z-0" aria-hidden="true"></div>
 
-  <!-- Background Grid Texture Pattern -->
-  <div class="pointer-events-none fixed inset-0 bg-[radial-gradient(rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:32px_32px] z-0 opacity-40"></div>
-
-  <!-- Global Header Navigation -->
-  <header class="sticky top-0 z-50 w-full border-b border-border/60 bg-background/70 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
-    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="#beranda" class="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight text-foreground group">
-        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-extrabold text-sm shadow-[0_0_15px_rgba(99,102,241,0.5)] group-hover:scale-105 transition-transform">Σ</span>
-        <span class="tracking-tighter">SIGMA<span class="text-indigo-400">.</span></span>
+  <!-- Apple Frosted Glass Navigation Bar -->
+  <header class="sticky top-0 z-50 w-full border-b border-apple-border/60 bg-apple-black/75 apple-blur">
+    <div class="max-w-5xl mx-auto px-6 h-12 flex items-center justify-between text-xs font-normal">
+      <!-- Apple-style Logo Mark -->
+      <a href="#beranda" class="flex items-center gap-2 text-apple-text hover:text-white transition-opacity font-semibold tracking-tight text-sm">
+        <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-black font-extrabold text-xs">Σ</span>
+        <span>SIGMA</span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-        <a href="#beranda" class="transition-colors hover:text-foreground">Beranda</a>
-        <a href="#profil" class="transition-colors hover:text-foreground flex items-center gap-1.5">
-          <span>Layanan</span>
-          <span class="inline-flex items-center rounded-full bg-indigo-500/20 px-1.5 py-0.2 text-[9px] font-bold text-indigo-400">STICKY</span>
+      <!-- Minimalist Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-apple-muted font-normal text-[12px] tracking-tight">
+        <a href="#beranda" class="hover:text-apple-text transition-colors">Ikhtisar</a>
+        <a href="#profil" class="hover:text-apple-text transition-colors flex items-center gap-1.5">
+          <span>Fitur &amp; Layanan</span>
+          <span class="text-[10px] text-apple-blue font-medium bg-apple-blue/10 px-1.5 py-0.5 rounded-full">Interaktif</span>
         </a>
-        <a href="#portofolio" class="transition-colors hover:text-foreground">Karya</a>
-        <a href="#kontak" class="transition-colors hover:text-foreground">Kontak</a>
+        <a href="#portofolio" class="hover:text-apple-text transition-colors">Portofolio</a>
+        <a href="#kontak" class="hover:text-apple-text transition-colors">Konsultasi</a>
       </nav>
 
+      <!-- Apple Pill Button -->
       <div class="flex items-center gap-3">
-        <a href="#kontak" class="relative group inline-flex items-center justify-center rounded-md text-sm font-semibold transition-all overflow-hidden p-[1px]">
-          <span class="absolute inset-0 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 rounded-md animate-shimmer [background-size:200%_auto]"></span>
-          <span class="relative h-9 px-4 py-2 rounded-[5px] bg-background text-foreground transition-all flex items-center gap-1.5 group-hover:bg-opacity-80">
-            <span>Mulai Proyek</span>
-            <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400"></i>
-          </span>
+        <a href="#kontak" class="inline-flex items-center justify-center rounded-full text-xs font-medium bg-apple-blue hover:bg-apple-blueHover text-white px-3.5 py-1 transition-all">
+          Mulai Proyek
         </a>
       </div>
     </div>
   </header>
 
   <main class="relative z-10">
-    <!-- HERO SECTION (#beranda) -->
-    <section id="beranda" class="pt-24 pb-20 md:pt-36 md:pb-28">
-      <div class="max-w-6xl mx-auto px-6 flex flex-col items-center text-center">
+    <!-- HERO SECTION (#beranda) — Apple Keynote Style -->
+    <section id="beranda" class="pt-24 pb-20 md:pt-36 md:pb-28 text-center">
+      <div class="max-w-4xl mx-auto px-6 flex flex-col items-center">
         
-        <!-- Live Studio Radar Badge -->
-        <div class="inline-flex items-center gap-2.5 rounded-full border border-indigo-500/30 bg-indigo-950/40 px-4 py-1.5 text-xs font-medium text-indigo-300 backdrop-blur-md mb-8 shadow-[0_0_20px_rgba(99,102,241,0.2)]">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span class="font-semibold tracking-wide">AVANT-GARDE STUDIO • OPEN FOR Q4 2026</span>
-          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-indigo-400"></i>
+        <!-- Apple Eyebrow Pill -->
+        <div class="inline-flex items-center gap-2 rounded-full border border-apple-border bg-apple-card/80 px-3.5 py-1 text-[11px] font-medium text-apple-muted backdrop-blur-md mb-6 shadow-sm">
+          <span class="h-1.5 w-1.5 rounded-full bg-apple-blue"></span>
+          <span>Generasi Baru Studio Desain</span>
+          <span class="text-apple-text">Q4 2026</span>
         </div>
 
-        <!-- High-Impact Kinetic Headline -->
-        <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-foreground max-w-5xl leading-[1.02] mb-6">
-          Desain Radikal. <br class="hidden sm:inline" />
-          <span class="bg-gradient-to-r from-white via-indigo-200 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_35px_rgba(168,85,247,0.3)]">Konversi Nyata.</span>
+        <!-- Grand Apple-Style Headline -->
+        <h1 class="text-5xl sm:text-7xl md:text-8xl font-semibold tracking-[-0.035em] text-white leading-[1.04] mb-6">
+          Desain Pro. <br />
+          <span class="bg-gradient-to-r from-apple-text via-[#e5e5ea] to-apple-muted bg-clip-text text-transparent">Presisi Tanpa Kompromi.</span>
         </h1>
 
-        <p class="text-base sm:text-xl text-muted-foreground max-w-2xl font-normal leading-relaxed mb-10">
-          Kami menantang tata letak konvensional. Menggabungkan arsitektur token shadcn/ui, estetika tajam, dan psikologi konversi tanpa kompromi.
+        <p class="text-lg sm:text-xl text-apple-muted max-w-2xl font-normal leading-relaxed tracking-tight mb-10">
+          Memadukan arsitektur UI/UX berstandar industri dengan estetika hardware-grade Apple. Dibuat untuk startup dan brand yang menuntut kesempurnaan.
         </p>
 
-        <!-- CTA Buttons with Glowing Glow-Shimmer -->
-        <div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-20">
-          <a href="#kontak" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-lg text-sm font-semibold transition-all bg-primary text-primary-foreground shadow-[0_0_25px_rgba(255,255,255,0.25)] hover:shadow-[0_0_35px_rgba(99,102,241,0.5)] hover:scale-105 h-12 px-8">
-            <span>Eksplor Proyek Sekarang</span>
-            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        <!-- Apple Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 mb-20">
+          <a href="#kontak" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium bg-white text-black hover:bg-zinc-200 h-11 px-7 transition-all shadow-lg shadow-white/5">
+            <span>Mulai Konsultasi Desain</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
-          <a href="#profil" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg text-sm font-semibold transition-all border border-border bg-card/60 backdrop-blur-md shadow-sm hover:bg-secondary hover:border-zinc-700 h-12 px-7">
-            <i data-lucide="mouse-pointer-click" class="w-4 h-4 text-indigo-400"></i>
-            <span>Scroll Interaktif Layanan</span>
+          <a href="#profil" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium border border-apple-border hover:border-apple-borderLight text-apple-blue hover:text-white h-11 px-6 transition-all">
+            <span>Pelajari Kemampuan Scroll</span>
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
           </a>
         </div>
 
-        <!-- Kinetic Metric Cards -->
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full max-w-5xl">
-          <div class="rounded-xl border border-border/80 bg-card/50 backdrop-blur-md p-6 text-left shadow-sm transition-all hover:border-indigo-500/50 hover:bg-card/80 group">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-display text-3xl font-black text-foreground group-hover:text-indigo-300 transition-colors">99.4%</span>
-              <i data-lucide="flame" class="w-4 h-4 text-indigo-400"></i>
-            </div>
-            <span class="text-xs text-muted-foreground font-medium">Tingkat Kepuasan Mitra</span>
+        <!-- Apple Glass Metric Tiles -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3.5 w-full max-w-4xl">
+          <div class="rounded-apple-md border border-apple-border bg-apple-card/60 p-5 text-left backdrop-blur-md transition-all hover:bg-apple-card">
+            <span class="text-2xl sm:text-3xl font-semibold text-white tracking-tight block mb-1">99.4%</span>
+            <span class="text-xs text-apple-muted font-normal">Kepuasan Klien</span>
           </div>
-
-          <div class="rounded-xl border border-border/80 bg-card/50 backdrop-blur-md p-6 text-left shadow-sm transition-all hover:border-indigo-500/50 hover:bg-card/80 group">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-display text-3xl font-black text-foreground group-hover:text-indigo-300 transition-colors">120+</span>
-              <i data-lucide="layers" class="w-4 h-4 text-purple-400"></i>
-            </div>
-            <span class="text-xs text-muted-foreground font-medium">Proyek Rilis Skala Global</span>
+          <div class="rounded-apple-md border border-apple-border bg-apple-card/60 p-5 text-left backdrop-blur-md transition-all hover:bg-apple-card">
+            <span class="text-2xl sm:text-3xl font-semibold text-white tracking-tight block mb-1">120+</span>
+            <span class="text-xs text-apple-muted font-normal">Proyek Dirilis</span>
           </div>
-
-          <div class="rounded-xl border border-border/80 bg-card/50 backdrop-blur-md p-6 text-left shadow-sm transition-all hover:border-indigo-500/50 hover:bg-card/80 group">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-display text-3xl font-black text-foreground group-hover:text-indigo-300 transition-colors">3.8x</span>
-              <i data-lucide="trending-up" class="w-4 h-4 text-emerald-400"></i>
-            </div>
-            <span class="text-xs text-muted-foreground font-medium">Rata-rata Lonjakan Konversi</span>
+          <div class="rounded-apple-md border border-apple-border bg-apple-card/60 p-5 text-left backdrop-blur-md transition-all hover:bg-apple-card">
+            <span class="text-2xl sm:text-3xl font-semibold text-apple-blue tracking-tight block mb-1">3.8x</span>
+            <span class="text-xs text-apple-muted font-normal">Peningkatan Konversi</span>
           </div>
-
-          <div class="rounded-xl border border-border/80 bg-card/50 backdrop-blur-md p-6 text-left shadow-sm transition-all hover:border-indigo-500/50 hover:bg-card/80 group">
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-display text-3xl font-black text-foreground group-hover:text-indigo-300 transition-colors">&lt;24 Jam</span>
-              <i data-lucide="zap" class="w-4 h-4 text-amber-400"></i>
-            </div>
-            <span class="text-xs text-muted-foreground font-medium">Kecepatan Diagnosa Strategis</span>
+          <div class="rounded-apple-md border border-apple-border bg-apple-card/60 p-5 text-left backdrop-blur-md transition-all hover:bg-apple-card">
+            <span class="text-2xl sm:text-3xl font-semibold text-white tracking-tight block mb-1">&lt;24 Jam</span>
+            <span class="text-xs text-apple-muted font-normal">Respon Diagnosa</span>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- CLIENT LOGO STRIP -->
-    <div class="border-y border-border/60 bg-muted/20 py-8 overflow-hidden">
-      <div class="max-w-6xl mx-auto px-6 flex flex-col items-center gap-4">
-        <span class="text-[11px] font-bold uppercase tracking-[0.25em] text-zinc-500">DIPERCAYA OLEH TIM ENGINEERING &amp; FOUNDER INOVATIF</span>
-        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 font-display font-black text-sm tracking-widest text-muted-foreground/60">
-          <span class="hover:text-foreground transition-colors cursor-pointer">AURA FINANCIAL</span>
-          <span class="hover:text-foreground transition-colors cursor-pointer">NEXUS AI</span>
-          <span class="hover:text-foreground transition-colors cursor-pointer">VERDE LABS</span>
-          <span class="hover:text-foreground transition-colors cursor-pointer">KINETIC VENTURES</span>
-          <span class="hover:text-foreground transition-colors cursor-pointer">LUMEN ARCH</span>
+    <!-- APPLE-STYLE BRAND TICKER -->
+    <div class="border-y border-apple-border/50 bg-apple-dark/40 py-6">
+      <div class="max-w-5xl mx-auto px-6 flex flex-col items-center gap-3">
+        <span class="text-[11px] font-medium tracking-wide uppercase text-apple-subtle">Dipercaya oleh Para Visioner Teknologi</span>
+        <div class="flex flex-wrap items-center justify-center gap-8 md:gap-14 text-xs font-semibold tracking-wider text-apple-muted/70">
+          <span>AURA FINANCIAL</span>
+          <span>NEXUS AI</span>
+          <span>VERDE SYSTEM</span>
+          <span>KINETIC PRO</span>
+          <span>LUMEN LABS</span>
         </div>
       </div>
     </div>
 
     <!-- =====================================================================
-         VIRAL STICKY PINNED SCROLL EXPERIENCE (#profil)
-         The parent container has 350vh scroll runway.
-         The inner child is sticky at top-0 (100vh height).
-         While the user scrolls, the page stays PINNED and elements internally
-         transform and transition through states!
+         STICKY PINNED KEYNOTE SCROLL SECTION (#profil)
+         Apple Product Showcase Style: Page stays pinned while features reveal
          ===================================================================== -->
     <section id="profil" class="relative">
       
-      <!-- Scroll Runway (Height 320vh allows full scrub engagement) -->
+      <!-- 320vh Scroll Runway for Precise Keynote Scrubbing -->
       <div id="sticky-scroll-runway" class="h-[320vh] relative">
         
-        <!-- Pinned 100vh Container -->
-        <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-background/95 backdrop-blur-2xl border-y border-border/60">
+        <!-- Pinned 100vh Apple Stage -->
+        <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-apple-black/90 apple-blur border-y border-apple-border/60">
           
-          <div class="max-w-7xl w-full mx-auto px-6 h-full flex flex-col justify-between py-12 md:py-16">
+          <div class="max-w-5xl w-full mx-auto px-6 h-full flex flex-col justify-between py-10 md:py-14">
             
-            <!-- Sticky Section Header with Dynamic Progress Tracker -->
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border/60 pb-6">
+            <!-- Sticky Section Header with Apple Segmented Progress -->
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-apple-border/60 pb-5">
               <div>
-                <div class="inline-flex items-center gap-2 rounded-md border border-indigo-500/40 bg-indigo-500/10 px-2.5 py-0.5 text-xs font-bold text-indigo-400 mb-2">
-                  <span class="animate-pulse h-1.5 w-1.5 rounded-full bg-indigo-400"></span>
-                  <span>STICKY SCROLL EXPERIENCE</span>
-                </div>
-                <h2 class="font-display text-2xl md:text-4xl font-black tracking-tight text-foreground">
-                  Layanan Kami: <span class="text-indigo-400" id="scroll-headline-label">UI/UX &amp; Arsitektur Produk</span>
+                <span class="text-xs font-semibold text-apple-blue tracking-wide uppercase block mb-1">Layanan Terpadu</span>
+                <h2 class="text-2xl sm:text-4xl font-semibold tracking-tight text-white" id="apple-scroll-headline">
+                  UI/UX &amp; Arsitektur Antarmuka
                 </h2>
               </div>
 
-              <!-- Realtime Scroll Progress HUD Indicator -->
-              <div class="flex items-center gap-4 bg-card border border-border px-4 py-2 rounded-xl shadow-inner">
-                <span class="text-xs font-mono text-muted-foreground font-semibold">STATE SCROLL</span>
-                <div class="w-32 h-2 bg-secondary rounded-full overflow-hidden">
-                  <div id="sticky-progress-bar" class="h-full bg-gradient-to-r from-indigo-500 to-purple-500 w-0 transition-[width] duration-75"></div>
+              <!-- Segmented Progress Trackers -->
+              <div class="flex items-center gap-2 bg-apple-card border border-apple-border px-3.5 py-1.5 rounded-full">
+                <span class="text-[11px] text-apple-muted font-medium mr-1">Tinjauan</span>
+                <div class="flex gap-1.5">
+                  <span id="apple-seg-1" class="h-1.5 w-6 rounded-full bg-apple-blue transition-all"></span>
+                  <span id="apple-seg-2" class="h-1.5 w-6 rounded-full bg-white/20 transition-all"></span>
+                  <span id="apple-seg-3" class="h-1.5 w-6 rounded-full bg-white/20 transition-all"></span>
                 </div>
-                <span id="sticky-progress-percent" class="text-xs font-mono font-bold text-foreground">0%</span>
+                <span id="apple-progress-percent" class="text-[11px] font-mono text-apple-text ml-1">0%</span>
               </div>
             </div>
 
-            <!-- Sticky Stage Content (Transforms in place while user scrolls) -->
-            <div class="grid lg:grid-cols-12 gap-8 items-center my-auto py-6">
+            <!-- Apple Stage Canvas -->
+            <div class="grid lg:grid-cols-12 gap-8 items-center my-auto py-4">
               
-              <!-- Left Column: Stepper Indicators -->
-              <div class="lg:col-span-4 space-y-4">
-                <p class="text-xs uppercase tracking-widest text-muted-foreground font-bold mb-4">GULIR KE BAWAH UNTUK MENGUBAH STATE</p>
+              <!-- Left Column: Interactive Navigation Pills -->
+              <div class="lg:col-span-4 space-y-3">
+                <p class="text-[11px] font-medium uppercase tracking-wider text-apple-subtle mb-3">Gulir untuk menelusuri keahlian</p>
                 
-                <!-- Step 1 Trigger -->
-                <div id="step-nav-1" class="step-nav-item active-step p-4 rounded-xl border border-indigo-500/50 bg-indigo-500/10 transition-all duration-300">
-                  <div class="flex items-center gap-3">
-                    <span class="font-mono text-xs font-black px-2 py-1 rounded bg-indigo-500 text-white">01</span>
+                <div id="apple-step-1" class="apple-step-card p-4 rounded-apple-sm border border-apple-borderLight bg-apple-card transition-all">
+                  <div class="flex items-start gap-3">
+                    <span class="text-xs font-bold text-apple-blue font-mono mt-0.5">01</span>
                     <div>
-                      <h4 class="font-bold text-sm text-foreground">UI/UX Product Architecture</h4>
-                      <p class="text-xs text-muted-foreground">Flow intuitif, micro-interaction, dan wireframe presisi.</p>
+                      <h4 class="text-sm font-semibold text-white tracking-tight">Desain Produk &amp; UI/UX</h4>
+                      <p class="text-xs text-apple-muted mt-0.5 leading-relaxed">Arsitektur alur kerja mulus dan interaksi tanpa hambatan.</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Step 2 Trigger -->
-                <div id="step-nav-2" class="step-nav-item p-4 rounded-xl border border-border bg-card/40 transition-all duration-300">
-                  <div class="flex items-center gap-3">
-                    <span class="font-mono text-xs font-black px-2 py-1 rounded bg-secondary text-muted-foreground">02</span>
+                <div id="apple-step-2" class="apple-step-card p-4 rounded-apple-sm border border-apple-border bg-apple-card/40 transition-all">
+                  <div class="flex items-start gap-3">
+                    <span class="text-xs font-bold text-apple-subtle font-mono mt-0.5">02</span>
                     <div>
-                      <h4 class="font-bold text-sm text-foreground">Brand Identity &amp; Visual System</h4>
-                      <p class="text-xs text-muted-foreground">Tipografi avant-garde, aset 3D, dan identitas autentik.</p>
+                      <h4 class="text-sm font-semibold text-apple-muted tracking-tight">Identitas Visual Merek</h4>
+                      <p class="text-xs text-apple-subtle mt-0.5 leading-relaxed">Sistem tipografi dan bahasa visual konsisten skala enterprise.</p>
                     </div>
                   </div>
                 </div>
 
-                <!-- Step 3 Trigger -->
-                <div id="step-nav-3" class="step-nav-item p-4 rounded-xl border border-border bg-card/40 transition-all duration-300">
-                  <div class="flex items-center gap-3">
-                    <span class="font-mono text-xs font-black px-2 py-1 rounded bg-secondary text-muted-foreground">03</span>
+                <div id="apple-step-3" class="apple-step-card p-4 rounded-apple-sm border border-apple-border bg-apple-card/40 transition-all">
+                  <div class="flex items-start gap-3">
+                    <span class="text-xs font-bold text-apple-subtle font-mono mt-0.5">03</span>
                     <div>
-                      <h4 class="font-bold text-sm text-foreground">shadcn/ui Engineering &amp; Tokens</h4>
-                      <p class="text-xs text-muted-foreground">Sinkronisasi Figma tokens langsung ke komponen frontend.</p>
+                      <h4 class="text-sm font-semibold text-apple-muted tracking-tight">Sistem Desain Frontend</h4>
+                      <p class="text-xs text-apple-subtle mt-0.5 leading-relaxed">Komponen modular terhubung token siap pakai untuk tim developer.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Right Column: The Transforming Stage Canvas -->
+              <!-- Right Column: Transforming Apple Glass Device Screen -->
               <div class="lg:col-span-8 relative h-[360px] sm:h-[400px] w-full flex items-center justify-center">
                 
-                <!-- STAGE 1: UI/UX Component Suite -->
+                <!-- STAGE 1: UI/UX Glass Hardware -->
                 <div id="stage-panel-1" class="stage-panel absolute inset-0 transition-all duration-500 opacity-100 scale-100 pointer-events-auto">
-                  <div class="h-full w-full rounded-2xl border border-indigo-500/40 bg-gradient-to-br from-indigo-950/40 via-card to-card p-6 md:p-8 flex flex-col justify-between shadow-[0_0_50px_rgba(99,102,241,0.15)]">
-                    <div class="flex items-center justify-between border-b border-border/60 pb-4">
+                  <div class="h-full w-full rounded-apple-lg border border-apple-border bg-gradient-to-b from-apple-card to-apple-dark p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+                    <div class="flex items-center justify-between border-b border-apple-border pb-3.5">
                       <div class="flex items-center gap-2">
-                        <span class="h-3 w-3 rounded-full bg-red-500/80"></span>
-                        <span class="h-3 w-3 rounded-full bg-yellow-500/80"></span>
-                        <span class="h-3 w-3 rounded-full bg-emerald-500/80"></span>
-                        <span class="text-xs font-mono text-muted-foreground ml-2">AuraPay_Dashboard_v3.tsx</span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
+                        <span class="h-2.5 w-2.5 rounded-full bg-white/20"></span>
+                        <span class="text-[11px] font-mono text-apple-muted ml-2">AuraPay_Core_Console</span>
                       </div>
-                      <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20">LIVE UI/UX STATE</span>
+                      <span class="text-[11px] text-apple-blue font-medium bg-apple-blue/10 px-2.5 py-0.5 rounded-full">Kinerja Tinggi</span>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-auto py-4">
-                      <div class="p-4 rounded-xl border border-border bg-background/80">
-                        <span class="text-xs text-muted-foreground block mb-1">Rasio Retensi</span>
-                        <span class="text-2xl font-bold font-display text-emerald-400">+84.2%</span>
-                        <div class="h-1.5 w-full bg-secondary rounded-full mt-2 overflow-hidden">
-                          <div class="h-full bg-emerald-400 w-4/5"></div>
+                    <div class="grid grid-cols-3 gap-3.5 my-auto py-2">
+                      <div class="p-4 rounded-apple-sm border border-apple-border bg-apple-black/50">
+                        <span class="text-[11px] text-apple-muted block mb-1">Penyelesaian Alur</span>
+                        <span class="text-2xl font-semibold text-white tracking-tight">+84.2%</span>
+                        <div class="h-1 w-full bg-white/10 rounded-full mt-2.5 overflow-hidden">
+                          <div class="h-full bg-apple-blue w-4/5"></div>
                         </div>
                       </div>
-                      <div class="p-4 rounded-xl border border-border bg-background/80">
-                        <span class="text-xs text-muted-foreground block mb-1">Kecepatan Checkout</span>
-                        <span class="text-2xl font-bold font-display text-indigo-400">1.2 Detik</span>
-                        <div class="h-1.5 w-full bg-secondary rounded-full mt-2 overflow-hidden">
-                          <div class="h-full bg-indigo-400 w-11/12"></div>
+                      <div class="p-4 rounded-apple-sm border border-apple-border bg-apple-black/50">
+                        <span class="text-[11px] text-apple-muted block mb-1">Latency Interaksi</span>
+                        <span class="text-2xl font-semibold text-apple-blue tracking-tight">16ms</span>
+                        <div class="h-1 w-full bg-white/10 rounded-full mt-2.5 overflow-hidden">
+                          <div class="h-full bg-apple-blue w-11/12"></div>
                         </div>
                       </div>
-                      <div class="p-4 rounded-xl border border-border bg-background/80">
-                        <span class="text-xs text-muted-foreground block mb-1">Aksesibilitas</span>
-                        <span class="text-2xl font-bold font-display text-white">AAA Skor</span>
-                        <div class="h-1.5 w-full bg-secondary rounded-full mt-2 overflow-hidden">
+                      <div class="p-4 rounded-apple-sm border border-apple-border bg-apple-black/50">
+                        <span class="text-[11px] text-apple-muted block mb-1">Aksesibilitas</span>
+                        <span class="text-2xl font-semibold text-white tracking-tight">100%</span>
+                        <div class="h-1 w-full bg-white/10 rounded-full mt-2.5 overflow-hidden">
                           <div class="h-full bg-white w-full"></div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/60">
-                      <span>• Arsitektur Alur Transaksi Terintegrasi</span>
-                      <span class="font-mono text-indigo-400">Scroll lebih lanjut untuk State 02 →</span>
+                    <div class="flex items-center justify-between text-xs text-apple-muted pt-3 border-t border-apple-border">
+                      <span>• Arsitektur antarmuka teruji manusia</span>
+                      <span class="text-apple-blue font-medium">Gulir ke State 02 →</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- STAGE 2: Brand Identity & Kinetic Typography -->
-                <div id="stage-panel-2" class="stage-panel absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none translate-y-6">
-                  <div class="h-full w-full rounded-2xl border border-purple-500/40 bg-gradient-to-br from-purple-950/40 via-card to-card p-6 md:p-8 flex flex-col justify-between shadow-[0_0_50px_rgba(168,85,247,0.15)]">
-                    <div class="flex items-center justify-between border-b border-border/60 pb-4">
+                <!-- STAGE 2: Brand Identity Typographic Specimen -->
+                <div id="stage-panel-2" class="stage-panel absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none translate-y-4">
+                  <div class="h-full w-full rounded-apple-lg border border-apple-border bg-gradient-to-b from-apple-card to-apple-dark p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+                    <div class="flex items-center justify-between border-b border-apple-border pb-3.5">
                       <div class="flex items-center gap-2">
-                        <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
-                        <span class="text-xs font-mono text-muted-foreground">Nexus_Brand_Manifesto.spec</span>
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-apple-blue"></i>
+                        <span class="text-[11px] font-mono text-apple-muted">Sistem_Tipografi_Pro</span>
                       </div>
-                      <span class="text-xs font-semibold text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded border border-purple-500/20">BRAND IDENTITY STATE</span>
+                      <span class="text-[11px] text-white font-medium bg-white/10 px-2.5 py-0.5 rounded-full">Identitas Presisi</span>
                     </div>
 
-                    <div class="text-center my-auto py-4">
-                      <span class="text-xs font-mono uppercase tracking-[0.3em] text-purple-300 block mb-2">CUSTOM LOGOTYPE &amp; SPECIMEN</span>
-                      <div class="font-display text-4xl sm:text-6xl font-black tracking-tight text-white mb-2">
-                        SIGMA <span class="text-purple-400">SYNE</span> 2026
+                    <div class="text-center my-auto py-2">
+                      <span class="text-[11px] uppercase tracking-widest text-apple-muted block mb-2">Desain Typographic Standard</span>
+                      <div class="text-4xl sm:text-5xl font-semibold tracking-[-0.03em] text-white mb-2">
+                        SIGMA SF Pro
                       </div>
-                      <p class="text-xs text-muted-foreground max-w-md mx-auto">Skala modular tipografi 1.25x (Major Third) dipadukan dengan palet neon obsidian &amp; kontras WCAG compliant.</p>
-                      
-                      <!-- Color Tokens Palette Swatch -->
-                      <div class="flex items-center justify-center gap-3 mt-4">
-                        <span class="h-6 w-12 rounded bg-zinc-950 border border-white/20" title="Obsidian #090a0f"></span>
-                        <span class="h-6 w-12 rounded bg-indigo-600" title="Electric Indigo"></span>
-                        <span class="h-6 w-12 rounded bg-purple-600" title="Vibrant Purple"></span>
-                        <span class="h-6 w-12 rounded bg-emerald-500" title="Cyber Emerald"></span>
+                      <p class="text-xs text-apple-muted max-w-sm mx-auto leading-relaxed">
+                        Skala modular tipografi Apple HIG berpadu palet warna titanium untuk keterbacaan sempurna di berbagai resolusi retina.
+                      </p>
+
+                      <!-- Apple Color Swatches -->
+                      <div class="flex items-center justify-center gap-2.5 mt-5">
+                        <span class="h-5 w-10 rounded-full bg-apple-black border border-white/20" title="Space Black"></span>
+                        <span class="h-5 w-10 rounded-full bg-[#1d1d1f]" title="Titanium Dark"></span>
+                        <span class="h-5 w-10 rounded-full bg-apple-blue" title="Apple Blue"></span>
+                        <span class="h-5 w-10 rounded-full bg-[#f5f5f7]" title="Pure Silver"></span>
                       </div>
                     </div>
 
-                    <div class="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/60">
-                      <span>• Panduan Identitas Visual 120 Halaman Lengkap</span>
-                      <span class="font-mono text-purple-400">Scroll lebih lanjut untuk State 03 →</span>
+                    <div class="flex items-center justify-between text-xs text-apple-muted pt-3 border-t border-apple-border">
+                      <span>• Panduan Brand Lengkap &amp; Skalabilitas Format</span>
+                      <span class="text-apple-blue font-medium">Gulir ke State 03 →</span>
                     </div>
                   </div>
                 </div>
 
-                <!-- STAGE 3: shadcn/ui Code-Ready Engineering -->
-                <div id="stage-panel-3" class="stage-panel absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none translate-y-6">
-                  <div class="h-full w-full rounded-2xl border border-cyan-500/40 bg-gradient-to-br from-cyan-950/40 via-card to-card p-6 md:p-8 flex flex-col justify-between shadow-[0_0_50px_rgba(6,182,212,0.15)]">
-                    <div class="flex items-center justify-between border-b border-border/60 pb-4">
+                <!-- STAGE 3: Design System Engineering -->
+                <div id="stage-panel-3" class="stage-panel absolute inset-0 transition-all duration-500 opacity-0 scale-95 pointer-events-none translate-y-4">
+                  <div class="h-full w-full rounded-apple-lg border border-apple-border bg-gradient-to-b from-apple-card to-apple-dark p-7 flex flex-col justify-between shadow-2xl relative overflow-hidden">
+                    <div class="flex items-center justify-between border-b border-apple-border pb-3.5">
                       <div class="flex items-center gap-2">
-                        <i data-lucide="code-2" class="w-4 h-4 text-cyan-400"></i>
-                        <span class="text-xs font-mono text-muted-foreground">components/ui/shadcn-system.tsx</span>
+                        <i data-lucide="code" class="w-3.5 h-3.5 text-apple-blue"></i>
+                        <span class="text-[11px] font-mono text-apple-muted">components/apple-tokens.json</span>
                       </div>
-                      <span class="text-xs font-semibold text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">CODE ENGINE STATE</span>
+                      <span class="text-[11px] text-emerald-400 font-medium bg-emerald-500/10 px-2.5 py-0.5 rounded-full">Siap Produksi</span>
                     </div>
 
-                    <div class="my-auto py-4 font-mono text-xs bg-background/90 p-4 rounded-xl border border-border overflow-x-auto text-muted-foreground">
-                      <p><span class="text-purple-400">export const</span> <span class="text-cyan-300">designSystemTokens</span> = {</p>
-                      <p class="pl-4">radius: <span class="text-emerald-400">"0.75rem"</span>,</p>
-                      <p class="pl-4">tokens: [<span class="text-emerald-400">"card"</span>, <span class="text-emerald-400">"button-variant"</span>, <span class="text-emerald-400">"badge"</span>],</p>
-                      <p class="pl-4">performance: <span class="text-amber-400">"60+ FPS Scroll-Tuned"</span>,</p>
-                      <p class="pl-4">bootcampReady: <span class="text-cyan-400">true</span></p>
+                    <div class="my-auto py-2 font-mono text-xs bg-apple-black/70 p-4 rounded-apple-sm border border-apple-border text-apple-muted">
+                      <p><span class="text-apple-blue">const</span> <span class="text-white">appleDesignTokens</span> = {</p>
+                      <p class="pl-4">surface: <span class="text-emerald-400">"glass-blur-20px"</span>,</p>
+                      <p class="pl-4">typography: <span class="text-emerald-400">"SF Pro Display & Text"</span>,</p>
+                      <p class="pl-4">frameRate: <span class="text-white">60</span>,</p>
+                      <p class="pl-4">productionReady: <span class="text-apple-blue">true</span></p>
                       <p>};</p>
                     </div>
 
-                    <div class="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/60">
-                      <span>• Sinkronisasi Langsung Git, Branch, dan Figma Tokens</span>
-                      <a href="#kontak" class="font-bold text-cyan-400 hover:underline">Selesai • Mulai Kolaborasi →</a>
+                    <div class="flex items-center justify-between text-xs text-apple-muted pt-3 border-t border-apple-border">
+                      <span>• Handoff terstandarisasi untuk tim engineering</span>
+                      <a href="#kontak" class="text-white font-medium hover:text-apple-blue transition-colors">Konsultasikan Proyek Anda →</a>
                     </div>
                   </div>
                 </div>
@@ -412,13 +346,13 @@
 
             </div>
 
-            <!-- Footer Hint within Pinned Section -->
-            <div class="flex items-center justify-between text-xs text-muted-foreground pt-2">
+            <!-- Stage Footer Hint -->
+            <div class="flex items-center justify-between text-[11px] text-apple-subtle pt-2">
               <span class="flex items-center gap-1.5">
-                <i data-lucide="mouse" class="w-4 h-4 text-indigo-400"></i>
-                <span>Gunakan mouse wheel atau touch untuk menelusuri ketiga state.</span>
+                <i data-lucide="mouse" class="w-3.5 h-3.5 text-apple-blue"></i>
+                <span>Gunakan mouse scroll atau touch gesture untuk menelusuri ketiga tahapan.</span>
               </span>
-              <span class="font-mono text-zinc-500">SECTION 02 / STICKY</span>
+              <span>APPLE HIG STANDARD</span>
             </div>
 
           </div>
@@ -429,77 +363,66 @@
 
     </section>
 
-    <!-- SELECTED PORTFOLIO SHOWCASE (#portofolio) -->
-    <section id="portofolio" class="py-28 border-t border-border/60 bg-muted/10 relative">
-      <div class="max-w-7xl mx-auto px-6">
+    <!-- APPLE BENTO GRID PORTFOLIO SHOWCASE (#portofolio) -->
+    <section id="portofolio" class="py-24 border-t border-apple-border/50 bg-apple-dark/30">
+      <div class="max-w-5xl mx-auto px-6">
         
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-3">
           <div>
-            <span class="inline-flex items-center rounded-md border border-border bg-secondary/80 px-2.5 py-0.5 text-xs font-semibold text-secondary-foreground mb-3">SELECTED WORKS</span>
-            <h2 class="font-display text-3xl md:text-5xl font-black tracking-tight text-foreground">Karya Desain Unggulan</h2>
+            <span class="text-xs font-semibold text-apple-blue uppercase tracking-wider block mb-1">Hasil Karya</span>
+            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">Portofolio Desain Terpilih</h2>
           </div>
-          <p class="text-muted-foreground text-sm max-w-sm">Kombinasi visual memikat dan fungsionalitas mutakhir untuk perusahaan bervolume tinggi.</p>
+          <p class="text-xs text-apple-muted max-w-xs sm:text-right">
+            Solusi digital kelas pro yang dibangun dengan standar estetika terdepan.
+          </p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <!-- Apple Bento Grid -->
+        <div class="grid md:grid-cols-3 gap-5">
           
-          <!-- Project 1 -->
-          <div class="rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:border-indigo-500/50 hover:shadow-[0_0_30px_rgba(99,102,241,0.2)] transition-all group flex flex-col justify-between">
-            <div class="h-60 bg-gradient-to-br from-indigo-950 via-zinc-950 to-black p-6 flex flex-col justify-between relative overflow-hidden">
-              <div class="inline-flex items-center gap-1.5 self-start rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
-                FinTech SaaS
-              </div>
-              <div class="rounded-xl border border-white/10 bg-black/60 p-4 backdrop-blur-md transform group-hover:scale-105 transition-transform duration-300">
-                <div class="flex items-center justify-between mb-2">
-                  <div class="h-2 w-20 bg-white/40 rounded-full"></div>
-                  <div class="h-2 w-8 bg-emerald-400 rounded-full"></div>
-                </div>
-                <div class="h-6 w-full bg-indigo-500/30 rounded border-b-2 border-indigo-500"></div>
+          <div class="rounded-apple-lg border border-apple-border bg-apple-card p-6 flex flex-col justify-between hover:border-apple-borderLight transition-all group">
+            <div class="h-44 rounded-apple-sm bg-gradient-to-br from-[#121624] to-apple-black p-5 flex flex-col justify-between mb-5 border border-white/5 relative overflow-hidden">
+              <span class="text-[11px] font-medium text-white/80 bg-white/10 px-2.5 py-0.5 rounded-full self-start">FinTech Platform</span>
+              <div class="p-3 rounded-apple-sm bg-white/5 border border-white/10 backdrop-blur-md group-hover:scale-[1.02] transition-transform">
+                <div class="h-2 w-16 bg-white/40 rounded-full mb-2"></div>
+                <div class="h-4 w-full bg-apple-blue/30 rounded"></div>
               </div>
             </div>
-            <div class="p-6">
-              <span class="text-xs text-indigo-400 font-bold uppercase tracking-wider block mb-1">UI/UX • Design System</span>
-              <h3 class="font-display text-xl font-bold text-foreground mb-2">AuraPay Global Console</h3>
-              <p class="text-xs text-muted-foreground leading-relaxed">Penyederhanaan arsitektur keuangan institusional yang menghasilkan kenaikan efisiensi alur 42%.</p>
+            <div>
+              <span class="text-[11px] font-semibold text-apple-blue block mb-1">UI/UX • SYSTEM</span>
+              <h3 class="text-base font-semibold text-white mb-1.5">AuraPay Enterprise Console</h3>
+              <p class="text-xs text-apple-muted leading-relaxed">Penyederhanaan tata kelola modal digital institusional dengan efisiensi navigasi optimal.</p>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:border-purple-500/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.2)] transition-all group flex flex-col justify-between">
-            <div class="h-60 bg-gradient-to-br from-purple-950 via-zinc-950 to-black p-6 flex flex-col justify-between relative overflow-hidden">
-              <div class="inline-flex items-center gap-1.5 self-start rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
-                AI Platform
-              </div>
-              <div class="rounded-xl border border-white/10 bg-black/60 p-4 backdrop-blur-md transform group-hover:scale-105 transition-transform duration-300">
-                <div class="flex items-center justify-center gap-3 py-3">
-                  <div class="h-6 w-6 rounded-full border border-purple-400/40 bg-purple-500/20"></div>
-                  <div class="h-[2px] w-14 bg-purple-400/60"></div>
-                  <div class="h-7 w-7 rounded-full border border-purple-400 bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.8)]"></div>
-                </div>
+          <div class="rounded-apple-lg border border-apple-border bg-apple-card p-6 flex flex-col justify-between hover:border-apple-borderLight transition-all group">
+            <div class="h-44 rounded-apple-sm bg-gradient-to-br from-[#1b1224] to-apple-black p-5 flex flex-col justify-between mb-5 border border-white/5 relative overflow-hidden">
+              <span class="text-[11px] font-medium text-white/80 bg-white/10 px-2.5 py-0.5 rounded-full self-start">AI Infrastructure</span>
+              <div class="flex items-center justify-center gap-2 py-4">
+                <div class="h-6 w-6 rounded-full border border-purple-400/40 bg-purple-500/20"></div>
+                <div class="h-[1px] w-8 bg-purple-400/40"></div>
+                <div class="h-6 w-6 rounded-full border border-purple-400 bg-purple-500/80"></div>
               </div>
             </div>
-            <div class="p-6">
-              <span class="text-xs text-purple-400 font-bold uppercase tracking-wider block mb-1">Brand Identity • Web Experience</span>
-              <h3 class="font-display text-xl font-bold text-foreground mb-2">Nexus AI Core Engine</h3>
-              <p class="text-xs text-muted-foreground leading-relaxed">Identitas merek masa depan dan landing page generatif untuk infrastruktur model AI skala besar.</p>
+            <div>
+              <span class="text-[11px] font-semibold text-purple-400 block mb-1">BRAND IDENTITY</span>
+              <h3 class="text-base font-semibold text-white mb-1.5">Nexus Machine Intelligence</h3>
+              <p class="text-xs text-apple-muted leading-relaxed">Identitas visual modern dan landing page interaktif untuk ekosistem AI enterprise.</p>
             </div>
           </div>
 
-          <!-- Project 3 -->
-          <div class="rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:border-emerald-500/50 hover:shadow-[0_0_30px_rgba(16,185,129,0.2)] transition-all group flex flex-col justify-between">
-            <div class="h-60 bg-gradient-to-br from-emerald-950 via-zinc-950 to-black p-6 flex flex-col justify-between relative overflow-hidden">
-              <div class="inline-flex items-center gap-1.5 self-start rounded-full border border-white/10 bg-black/50 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-md">
-                Eco-Commerce
-              </div>
-              <div class="rounded-xl border border-white/10 bg-black/60 p-4 backdrop-blur-md transform group-hover:scale-105 transition-transform duration-300">
-                <div class="h-3 w-32 bg-white/30 rounded mb-2"></div>
-                <div class="h-6 w-full bg-emerald-500/20 border-l-3 border-emerald-400 rounded-sm"></div>
+          <div class="rounded-apple-lg border border-apple-border bg-apple-card p-6 flex flex-col justify-between hover:border-apple-borderLight transition-all group">
+            <div class="h-44 rounded-apple-sm bg-gradient-to-br from-[#0e1c18] to-apple-black p-5 flex flex-col justify-between mb-5 border border-white/5 relative overflow-hidden">
+              <span class="text-[11px] font-medium text-white/80 bg-white/10 px-2.5 py-0.5 rounded-full self-start">Sustainable Commerce</span>
+              <div class="p-3 rounded-apple-sm bg-white/5 border border-white/10 backdrop-blur-md">
+                <div class="h-2 w-24 bg-white/40 rounded-full mb-2"></div>
+                <div class="h-4 w-full bg-emerald-500/20 border-l-2 border-emerald-400 rounded-sm"></div>
               </div>
             </div>
-            <div class="p-6">
-              <span class="text-xs text-emerald-400 font-bold uppercase tracking-wider block mb-1">E-Commerce • Editorial</span>
-              <h3 class="font-display text-xl font-bold text-foreground mb-2">Verde Bio Lab Marketplace</h3>
-              <p class="text-xs text-muted-foreground leading-relaxed">Katalog visual editorial yang membawa nuansa eksklusif dan mendongkrak retensi belanja berulang.</p>
+            <div>
+              <span class="text-[11px] font-semibold text-emerald-400 block mb-1">ECO-COMMERCE</span>
+              <h3 class="text-base font-semibold text-white mb-1.5">Verde Material Collective</h3>
+              <p class="text-xs text-apple-muted leading-relaxed">Katalog visual editorial yang menghadirkan pengalaman eksplorasi produk autentik.</p>
             </div>
           </div>
 
@@ -508,106 +431,96 @@
       </div>
     </section>
 
-    <!-- CONTACT SECTION (#kontak) -->
-    <section id="kontak" class="py-28 md:py-36 relative">
-      <div class="max-w-6xl mx-auto px-6">
+    <!-- APPLE-STYLE INQUIRY SECTION (#kontak) -->
+    <section id="kontak" class="py-24 border-t border-apple-border/50">
+      <div class="max-w-4xl mx-auto px-6">
         
-        <div class="rounded-3xl border border-indigo-500/30 bg-gradient-to-br from-card via-card to-indigo-950/20 p-8 md:p-14 shadow-[0_0_60px_rgba(99,102,241,0.1)] grid md:grid-cols-2 gap-12 relative overflow-hidden">
+        <div class="rounded-apple-xl border border-apple-border bg-apple-card p-8 sm:p-12 shadow-xl grid md:grid-cols-2 gap-10">
           
-          <!-- Contact Left -->
           <div class="flex flex-col justify-between">
             <div>
-              <span class="inline-flex items-center rounded-md border border-indigo-500/40 bg-indigo-500/10 px-2.5 py-0.5 text-xs font-bold text-indigo-400 mb-3">KONSULTASI DESAIN</span>
-              <h2 class="font-display text-3xl md:text-5xl font-black tracking-tight text-foreground mb-4">
-                Mulai Transformasi Produk Anda Hari Ini.
+              <span class="text-xs font-semibold text-apple-blue uppercase tracking-wider block mb-1">Pemesanan &amp; Kolaborasi</span>
+              <h2 class="text-3xl font-semibold text-white tracking-tight mb-4">
+                Wujudkan Ide Anda Bersama SIGMA.
               </h2>
-              <p class="text-muted-foreground text-sm leading-relaxed mb-8">
-                Diskusikan tantangan bisnis dan visi estetika Anda bersama tim desainer prinsipal SIGMA. Kami memberikan analisis scoping gratis dalam 24 jam.
+              <p class="text-xs text-apple-muted leading-relaxed mb-6">
+                Ceritakan proyek atau produk yang ingin Anda bangun. Tim desainer kami akan memberikan penawaran lingkup kerja dalam 24 jam.
               </p>
 
-              <div class="space-y-5">
-                <div class="flex items-start gap-3.5">
-                  <div class="h-10 w-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                  </div>
-                  <div>
-                    <span class="text-xs text-muted-foreground block font-medium">Email Prinsipal</span>
-                    <a href="mailto:hello@sigmastudio.design" class="text-sm font-semibold text-foreground hover:text-indigo-400 transition-colors">hello@sigmastudio.design</a>
-                  </div>
+              <div class="space-y-4 text-xs">
+                <div>
+                  <span class="text-apple-subtle block font-medium">Alamat Email</span>
+                  <a href="mailto:contact@sigmastudio.design" class="text-white hover:text-apple-blue transition-colors font-medium">contact@sigmastudio.design</a>
                 </div>
-
-                <div class="flex items-start gap-3.5">
-                  <div class="h-10 w-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
-                    <i data-lucide="phone-call" class="w-4 h-4"></i>
-                  </div>
-                  <div>
-                    <span class="text-xs text-muted-foreground block font-medium">WhatsApp Priority Desk</span>
-                    <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="text-sm font-semibold text-foreground hover:text-emerald-400 transition-colors">+62 (812) 3456-7890</a>
-                  </div>
+                <div>
+                  <span class="text-apple-subtle block font-medium">WhatsApp Priority</span>
+                  <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="text-white hover:text-apple-blue transition-colors font-medium">+62 (812) 3456-7890</a>
+                </div>
+                <div>
+                  <span class="text-apple-subtle block font-medium">Lokasi</span>
+                  <span class="text-apple-muted">Jakarta, Indonesia • Kolaborasi Global</span>
                 </div>
               </div>
             </div>
 
-            <div class="mt-8 pt-6 border-t border-border flex items-center gap-2 text-xs text-muted-foreground">
-              <i data-lucide="shield-check" class="w-4 h-4 text-emerald-400"></i>
-              <span>Perjanjian Kerahasiaan (NDA) otomatis sebelum penyerahan brief teknis.</span>
+            <div class="mt-6 pt-4 border-t border-apple-border text-[11px] text-apple-subtle">
+              Standar Perjanjian Kerahasiaan (NDA) otomatis sebelum penyerahan aset.
             </div>
           </div>
 
-          <!-- Contact Right: Form -->
+          <!-- Apple Minimalist Form -->
           <div>
-            <form onsubmit="event.preventDefault(); alert('Terima kasih! Brief proyek telah terkirim ke tim SIGMA. Kami akan segera menghubungi Anda.');" class="space-y-4">
+            <form onsubmit="event.preventDefault(); alert('Terima kasih! Permintaan Anda telah kami terima.');" class="space-y-3.5">
               
-              <div class="space-y-1.5">
-                <label for="name" class="text-xs font-semibold text-foreground">Nama / Perusahaan</label>
-                <input type="text" id="name" required placeholder="Contoh: Amanda (PT Digital Maju)" class="flex h-11 w-full rounded-md border border-input bg-background/70 px-3.5 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+              <div class="space-y-1">
+                <label for="name" class="text-xs font-medium text-apple-muted">Nama Lengkap</label>
+                <input type="text" id="name" required placeholder="Contoh: Adrian Pratama" class="w-full rounded-apple-sm border border-apple-border bg-apple-black/60 px-3.5 py-2 text-xs text-white placeholder:text-apple-subtle focus:outline-none focus:border-apple-blue transition-colors">
               </div>
 
-              <div class="space-y-1.5">
-                <label for="email" class="text-xs font-semibold text-foreground">Email Bisnis</label>
-                <input type="email" id="email" required placeholder="amanda@perusahaan.com" class="flex h-11 w-full rounded-md border border-input bg-background/70 px-3.5 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
+              <div class="space-y-1">
+                <label for="email" class="text-xs font-medium text-apple-muted">Email Bisnis</label>
+                <input type="email" id="email" required placeholder="adrian@perusahaan.com" class="w-full rounded-apple-sm border border-apple-border bg-apple-black/60 px-3.5 py-2 text-xs text-white placeholder:text-apple-subtle focus:outline-none focus:border-apple-blue transition-colors">
               </div>
 
-              <div class="space-y-1.5">
-                <label class="text-xs font-semibold text-foreground">Layanan Target</label>
+              <div class="space-y-1">
+                <label class="text-xs font-medium text-apple-muted">Kategori Layanan</label>
                 <div class="grid grid-cols-2 gap-2 text-xs">
-                  <label class="flex items-center gap-2 p-2.5 rounded-md border border-border bg-secondary/30 cursor-pointer hover:bg-secondary/60 transition-colors">
-                    <input type="checkbox" checked class="rounded border-border text-indigo-500 focus:ring-ring">
-                    <span>UI/UX Product</span>
+                  <label class="flex items-center gap-2 p-2 rounded-apple-sm border border-apple-border bg-apple-black/40 cursor-pointer hover:border-apple-borderLight transition-all">
+                    <input type="checkbox" checked class="rounded border-apple-border text-apple-blue">
+                    <span class="text-[11px]">UI/UX Design</span>
                   </label>
-                  <label class="flex items-center gap-2 p-2.5 rounded-md border border-border bg-secondary/30 cursor-pointer hover:bg-secondary/60 transition-colors">
-                    <input type="checkbox" class="rounded border-border text-indigo-500 focus:ring-ring">
-                    <span>Brand Identity</span>
+                  <label class="flex items-center gap-2 p-2 rounded-apple-sm border border-apple-border bg-apple-black/40 cursor-pointer hover:border-apple-borderLight transition-all">
+                    <input type="checkbox" class="rounded border-apple-border text-apple-blue">
+                    <span class="text-[11px]">Brand Identity</span>
                   </label>
-                  <label class="flex items-center gap-2 p-2.5 rounded-md border border-border bg-secondary/30 cursor-pointer hover:bg-secondary/60 transition-colors">
-                    <input type="checkbox" class="rounded border-border text-indigo-500 focus:ring-ring">
-                    <span>Landing Page</span>
+                  <label class="flex items-center gap-2 p-2 rounded-apple-sm border border-apple-border bg-apple-black/40 cursor-pointer hover:border-apple-borderLight transition-all">
+                    <input type="checkbox" class="rounded border-apple-border text-apple-blue">
+                    <span class="text-[11px]">Landing Page</span>
                   </label>
-                  <label class="flex items-center gap-2 p-2.5 rounded-md border border-border bg-secondary/30 cursor-pointer hover:bg-secondary/60 transition-colors">
-                    <input type="checkbox" class="rounded border-border text-indigo-500 focus:ring-ring">
-                    <span>Design System</span>
+                  <label class="flex items-center gap-2 p-2 rounded-apple-sm border border-apple-border bg-apple-black/40 cursor-pointer hover:border-apple-borderLight transition-all">
+                    <input type="checkbox" class="rounded border-apple-border text-apple-blue">
+                    <span class="text-[11px]">Design System</span>
                   </label>
                 </div>
               </div>
 
-              <div class="space-y-1.5">
-                <label for="budget" class="text-xs font-semibold text-foreground">Estimasi Alokasi Anggaran</label>
-                <select id="budget" class="flex h-11 w-full rounded-md border border-input bg-background/70 px-3.5 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring">
-                  <option value="tier1">&lt; Rp 15.000.000</option>
-                  <option value="tier2" selected>Rp 15.000.000 – Rp 40.000.000</option>
-                  <option value="tier3">Rp 40.000.000 – Rp 80.000.000</option>
-                  <option value="tier4">&gt; Rp 80.000.000</option>
+              <div class="space-y-1">
+                <label for="budget" class="text-xs font-medium text-apple-muted">Estimasi Anggaran</label>
+                <select id="budget" class="w-full rounded-apple-sm border border-apple-border bg-apple-black/60 px-3.5 py-2 text-xs text-white focus:outline-none focus:border-apple-blue transition-colors">
+                  <option value="t1">&lt; Rp 15.000.000</option>
+                  <option value="t2" selected>Rp 15.000.000 – Rp 40.000.000</option>
+                  <option value="t3">Rp 40.000.000 – Rp 80.000.000</option>
+                  <option value="t4">&gt; Rp 80.000.000</option>
                 </select>
               </div>
 
-              <div class="space-y-1.5">
-                <label for="message" class="text-xs font-semibold text-foreground">Ringkasan Kebutuhan Proyek</label>
-                <textarea id="message" rows="3" required placeholder="Jelaskan secara singkat target produk, ekspektasi timeline, atau tantangan utama..." class="flex min-h-[90px] w-full rounded-md border border-input bg-background/70 px-3.5 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"></textarea>
+              <div class="space-y-1">
+                <label for="message" class="text-xs font-medium text-apple-muted">Keterangan Proyek</label>
+                <textarea id="message" rows="3" required placeholder="Jelaskan kebutuhan target produk Anda..." class="w-full rounded-apple-sm border border-apple-border bg-apple-black/60 px-3.5 py-2 text-xs text-white placeholder:text-apple-subtle focus:outline-none focus:border-apple-blue transition-colors"></textarea>
               </div>
 
-              <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-md text-sm font-bold transition-all bg-primary text-primary-foreground shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] h-11 px-4">
-                <span>Kirimkan Formulir Konsultasi</span>
-                <i data-lucide="send" class="w-4 h-4"></i>
+              <button type="submit" class="w-full rounded-full bg-apple-blue hover:bg-apple-blueHover text-white py-2.5 text-xs font-medium transition-all shadow-md mt-2">
+                Kirim Permintaan Konsultasi
               </button>
             </form>
           </div>
@@ -618,58 +531,41 @@
     </section>
   </main>
 
-  <!-- Global Footer -->
-  <footer class="border-t border-border bg-background py-14">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
-        <div class="max-w-xs">
-          <a href="#beranda" class="flex items-center gap-2 font-display text-lg font-bold text-foreground mb-3">
-            <span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-indigo-600 text-white text-xs font-extrabold">Σ</span>
-            <span>SIGMA Studio</span>
-          </a>
-          <p class="text-xs text-muted-foreground leading-relaxed">
-            Studio desain avant-garde dengan sistem desain terstandarisasi shadcn/ui dan pengalaman scroll interaktif.
-          </p>
+  <!-- APPLE MINIMALIST FOOTER -->
+  <footer class="border-t border-apple-border/40 bg-apple-dark py-10 text-xs text-apple-subtle">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-apple-border/40">
+        <div class="flex items-center gap-2 text-white font-medium">
+          <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white text-black text-[10px] font-bold">Σ</span>
+          <span>SIGMA Design Studio Pro</span>
         </div>
-
-        <div class="flex gap-16 text-xs">
-          <div class="space-y-3">
-            <span class="font-semibold text-foreground uppercase tracking-wider text-[11px] block">Navigasi</span>
-            <a href="#beranda" class="text-muted-foreground hover:text-foreground block transition-colors">Beranda</a>
-            <a href="#profil" class="text-muted-foreground hover:text-foreground block transition-colors">Layanan &amp; Profil</a>
-            <a href="#portofolio" class="text-muted-foreground hover:text-foreground block transition-colors">Portofolio</a>
-            <a href="#kontak" class="text-muted-foreground hover:text-foreground block transition-colors">Kontak</a>
-          </div>
-
-          <div class="space-y-3">
-            <span class="font-semibold text-foreground uppercase tracking-wider text-[11px] block">Sosial Media</span>
-            <a href="https://dribbble.com" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground block transition-colors">Dribbble</a>
-            <a href="https://behance.net" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground block transition-colors">Behance</a>
-            <a href="https://github.com" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground block transition-colors">GitHub</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-muted-foreground hover:text-foreground block transition-colors">LinkedIn</a>
-          </div>
+        <div class="flex items-center gap-6 text-[11px]">
+          <a href="#beranda" class="hover:text-white transition-colors">Ikhtisar</a>
+          <a href="#profil" class="hover:text-white transition-colors">Layanan</a>
+          <a href="#portofolio" class="hover:text-white transition-colors">Portofolio</a>
+          <a href="#kontak" class="hover:text-white transition-colors">Konsultasi</a>
         </div>
       </div>
 
-      <div class="pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between text-xs text-muted-foreground gap-4">
-        <p>&copy; 2026 SIGMA Design Studio. Hak Cipta Dilindungi.</p>
-        <p class="font-mono text-[11px]">Tugas Akhir Basic Bootcamp Komandro 2026 — Project CBL</p>
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px]">
+        <p>&copy; 2026 SIGMA Studio. Seluruh hak cipta dilindungi undang-undang.</p>
+        <p>Tugas Akhir Basic Bootcamp Komandro — Project CBL</p>
       </div>
     </div>
   </footer>
 
-  <!-- =====================================================================
-       VIRAL PINNED SCROLL CONTROLLER SCRIPT (60+ FPS REQUESTANIMATIONFRAME)
-       Calculates scrub progress and transitions states while pinned
-       ===================================================================== -->
+  <!-- APPLE STICKY KEYNOTE SCROLL CONTROLLER -->
   <script>
     lucide.createIcons();
 
     (function() {
       const runway = document.getElementById('sticky-scroll-runway');
-      const progressBar = document.getElementById('sticky-progress-bar');
-      const progressPercent = document.getElementById('sticky-progress-percent');
-      const headlineLabel = document.getElementById('scroll-headline-label');
+      const headline = document.getElementById('apple-scroll-headline');
+      const percentEl = document.getElementById('apple-progress-percent');
+      
+      const seg1 = document.getElementById('apple-seg-1');
+      const seg2 = document.getElementById('apple-seg-2');
+      const seg3 = document.getElementById('apple-seg-3');
 
       const panels = [
         document.getElementById('stage-panel-1'),
@@ -677,36 +573,32 @@
         document.getElementById('stage-panel-3')
       ];
 
-      const navItems = [
-        document.getElementById('step-nav-1'),
-        document.getElementById('step-nav-2'),
-        document.getElementById('step-nav-3')
+      const steps = [
+        document.getElementById('apple-step-1'),
+        document.getElementById('apple-step-2'),
+        document.getElementById('apple-step-3')
       ];
 
       const titles = [
-        "UI/UX & Arsitektur Produk",
-        "Brand Identity & Visual System",
-        "shadcn/ui Engineering & Tokens"
+        "UI/UX & Arsitektur Antarmuka",
+        "Sistem Identitas Visual Merek",
+        "Sistem Desain Frontend Terintegrasi"
       ];
 
-      let lastActiveIndex = -1;
+      let lastIndex = -1;
 
-      function updateStickyState() {
+      function updateAppleScroll() {
         if (!runway) return;
 
         const rect = runway.getBoundingClientRect();
-        const totalScrollable = runway.offsetHeight - window.innerHeight;
-        
-        if (totalScrollable <= 0) return;
+        const scrollable = runway.offsetHeight - window.innerHeight;
+        if (scrollable <= 0) return;
 
-        // Calculate normalized scroll progress: 0.0 to 1.0
-        const progress = Math.min(Math.max(-rect.top / totalScrollable, 0), 1);
+        const progress = Math.min(Math.max(-rect.top / scrollable, 0), 1);
         const percent = Math.round(progress * 100);
 
-        if (progressBar) progressBar.style.width = percent + '%';
-        if (progressPercent) progressPercent.textContent = percent + '%';
+        if (percentEl) percentEl.textContent = percent + '%';
 
-        // Map progress to 3 discrete states
         let activeIndex = 0;
         if (progress > 0.66) {
           activeIndex = 2;
@@ -714,59 +606,59 @@
           activeIndex = 1;
         }
 
-        if (activeIndex !== lastActiveIndex) {
-          lastActiveIndex = activeIndex;
-          if (headlineLabel) headlineLabel.textContent = titles[activeIndex];
+        // Update segmented bars
+        if (seg1 && seg2 && seg3) {
+          seg1.className = activeIndex >= 0 ? 'h-1.5 w-6 rounded-full bg-apple-blue transition-all' : 'h-1.5 w-6 rounded-full bg-white/20 transition-all';
+          seg2.className = activeIndex >= 1 ? 'h-1.5 w-6 rounded-full bg-apple-blue transition-all' : 'h-1.5 w-6 rounded-full bg-white/20 transition-all';
+          seg3.className = activeIndex >= 2 ? 'h-1.5 w-6 rounded-full bg-apple-blue transition-all' : 'h-1.5 w-6 rounded-full bg-white/20 transition-all';
+        }
 
-          // Switch stage panels
-          panels.forEach((panel, idx) => {
+        if (activeIndex !== lastIndex) {
+          lastIndex = activeIndex;
+          if (headline) headline.textContent = titles[activeIndex];
+
+          // Panel transitions
+          panels.forEach((panel, i) => {
             if (!panel) return;
-            if (idx === activeIndex) {
-              panel.classList.remove('opacity-0', 'scale-95', 'pointer-events-none', 'translate-y-6');
+            if (i === activeIndex) {
+              panel.classList.remove('opacity-0', 'scale-95', 'pointer-events-none', 'translate-y-4');
               panel.classList.add('opacity-100', 'scale-100', 'pointer-events-auto', 'translate-y-0');
             } else {
               panel.classList.remove('opacity-100', 'scale-100', 'pointer-events-auto', 'translate-y-0');
-              panel.classList.add('opacity-0', 'scale-95', 'pointer-events-none', 'translate-y-6');
+              panel.classList.add('opacity-0', 'scale-95', 'pointer-events-none', 'translate-y-4');
             }
           });
 
-          // Switch step navigator indicators
-          navItems.forEach((item, idx) => {
-            if (!item) return;
-            const badge = item.querySelector('span');
-            if (idx === activeIndex) {
-              item.classList.add('border-indigo-500/50', 'bg-indigo-500/10');
-              item.classList.remove('border-border', 'bg-card/40');
-              if (badge) {
-                badge.classList.remove('bg-secondary', 'text-muted-foreground');
-                badge.classList.add('bg-indigo-500', 'text-white');
-              }
+          // Step card highlights
+          steps.forEach((step, i) => {
+            if (!step) return;
+            const heading = step.querySelector('h4');
+            const num = step.querySelector('span');
+            if (i === activeIndex) {
+              step.className = 'apple-step-card p-4 rounded-apple-sm border border-apple-borderLight bg-apple-card transition-all';
+              if (heading) heading.className = 'text-sm font-semibold text-white tracking-tight';
+              if (num) num.className = 'text-xs font-bold text-apple-blue font-mono mt-0.5';
             } else {
-              item.classList.remove('border-indigo-500/50', 'bg-indigo-500/10');
-              item.classList.add('border-border', 'bg-card/40');
-              if (badge) {
-                badge.classList.add('bg-secondary', 'text-muted-foreground');
-                badge.classList.remove('bg-indigo-500', 'text-white');
-              }
+              step.className = 'apple-step-card p-4 rounded-apple-sm border border-apple-border bg-apple-card/40 transition-all';
+              if (heading) heading.className = 'text-sm font-semibold text-apple-muted tracking-tight';
+              if (num) num.className = 'text-xs font-bold text-apple-subtle font-mono mt-0.5';
             }
           });
         }
       }
 
-      // Smooth RAF scroll hook
       let ticking = false;
       window.addEventListener('scroll', () => {
         if (!ticking) {
           window.requestAnimationFrame(() => {
-            updateStickyState();
+            updateAppleScroll();
             ticking = false;
           });
           ticking = true;
         }
       }, { passive: true });
 
-      // Initial call
-      updateStickyState();
+      updateAppleScroll();
     })();
   </script>
 </body>
