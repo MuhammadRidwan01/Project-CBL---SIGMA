@@ -1,42 +1,535 @@
-<section id="profil">
-  <h2>Profil Tim Kami</h2>
+<!DOCTYPE html>
+<html lang="id" class="dark">
 
-  <!-- Kartu Profil 1: Rofi -->
-  <div class="profil-card">
-    <img src="images/foto-rofi.jpg.png" alt="Foto Profil Rofi">
-    <h3>Rofi</h3>
-    <p><strong>Peran:</strong> Web Developer & UI Designer</p>
-    <p>Bertanggung jawab dalam merancang struktur kode HTML serta memastikan tampilan antarmuka web tetap bersih dan
-      nyaman dilihat pengguna.</p>
-  </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGMA — Profil Tim Kami</title>
+  <meta name="description"
+    content="Profil Tim Pengembang SIGMA Studio Pro Max. Sinergi Rofi dan Ridwan dalam merancang produk digital kelas dunia dengan presisi hardware-grade.">
 
-  <!-- Kartu Profil 2: Ridwan -->
-  <div class="profil-card">
-    <img src="images/foto-ridwan.jpg.png" alt="Foto Profil Ridwan">
-    <h3>Ridwan</h3>
-    <p><strong>Peran:</strong> Technical Specialist</p>
-    <p>Fokus pada penyusunan logika konten, optimalisasi elemen halaman, serta mendukung pengintegrasian fitur-fitur
-      website secara keseluruhan.</p>
-  </div>
+  <!-- Inter & SF Pro fallback fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
-  <!-- Tabel Jam Operasional -->
-  <h3>Jadwal Operasional Tim</h3>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>Hari Kerja</th>
-        <th>Jam Pelayanan</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Senin - Jumat</td>
-        <td>08.00 - 17.00 WIB</td>
-      </tr>
-      <tr>
-        <td>Sabtu</td>
-        <td>09.00 - 14.00 WIB</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ["class"],
+      theme: {
+        extend: {
+          colors: {
+            apple: {
+              black: "#000000",
+              dark: "#0b0b0c",
+              card: "#141416",
+              cardHover: "#1c1c1f",
+              border: "rgba(255, 255, 255, 0.08)",
+              borderLight: "rgba(255, 255, 255, 0.18)",
+              text: "#f5f5f7",
+              muted: "#86868b",
+              subtle: "#6e6e73",
+              blue: "#2997ff",
+              blueHover: "#0077ed",
+              purple: "#a855f7",
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'apple-sm': '12px',
+            'apple-md': '20px',
+            'apple-lg': '28px',
+            'apple-xl': '34px',
+          }
+        },
+      },
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+  class="bg-apple-black text-apple-text antialiased selection:bg-apple-blue selection:text-white min-h-screen relative overflow-x-hidden font-sans">
+
+  <!-- Apple Ambient Spotlights -->
+  <div
+    class="pointer-events-none fixed -top-48 left-1/2 -translate-x-1/2 w-[900px] h-[550px] bg-gradient-to-b from-apple-blue/20 via-indigo-500/10 to-transparent blur-[160px] rounded-full z-0"
+    aria-hidden="true"></div>
+  <div
+    class="pointer-events-none fixed top-1/2 -right-48 w-[600px] h-[500px] bg-purple-500/10 blur-[180px] rounded-full z-0"
+    aria-hidden="true"></div>
+
+  <!-- DYNAMIC ISLAND / FLOATING PRO MAX NAVIGATION DOCK -->
+  <header class="sticky top-0 z-50 w-full border-b border-apple-border/60 bg-apple-black/75 apple-blur">
+    <div class="max-w-6xl mx-auto px-6 h-12 flex items-center justify-between text-xs font-normal">
+      <!-- Apple Logo & Pro Max Indicator -->
+      <a href="index.html#beranda"
+        class="flex items-center gap-2 text-apple-text hover:text-white transition-opacity font-semibold tracking-tight text-sm">
+        <span
+          class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white text-black font-extrabold text-xs shadow-sm">Σ</span>
+        <span>SIGMA</span>
+        <span
+          class="text-[10px] font-mono text-apple-blue font-bold px-1.5 py-0.2 rounded bg-apple-blue/10 border border-apple-blue/20">PRO
+          MAX</span>
+      </a>
+
+      <!-- Minimalist Navigation Links -->
+      <nav class="hidden md:flex items-center gap-7 text-apple-muted font-normal text-[12px] tracking-tight">
+        <a href="index.html#beranda" class="hover:text-apple-text transition-colors">Ikhtisar</a>
+        <a href="Profile.html"
+          class="text-white font-medium flex items-center gap-1.5 bg-white/5 px-2.5 py-1 rounded-full border border-white/10">
+          <span>Profil Tim</span>
+          <span
+            class="text-[9px] text-apple-blue font-semibold bg-apple-blue/10 px-1.5 py-0.2 rounded-full border border-apple-blue/20">AKTIF</span>
+        </a>
+        <a href="index.html#profil" class="hover:text-apple-text transition-colors">Keynote Layanan</a>
+        <a href="index.html#portofolio" class="hover:text-apple-text transition-colors">Karya Terpilih</a>
+        <a href="index.html#kalkulator" class="hover:text-apple-text transition-colors">Kalkulator Estimasi</a>
+        <a href="index.html#kontak" class="hover:text-apple-text transition-colors">Konsultasi</a>
+      </nav>
+
+      <!-- Action Button & Availability Status -->
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:flex items-center gap-1.5 text-[11px] text-apple-muted">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Kapasitas: 2 Slot Q4</span>
+        </div>
+        <a href="index.html#kontak"
+          class="inline-flex items-center justify-center rounded-full text-xs font-medium bg-apple-blue hover:bg-apple-blueHover text-white px-3.5 py-1 transition-colors shadow-sm">
+          Mulai Proyek
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- HERO SECTION — Apple Keynote Style Profile Header -->
+    <section class="section-reveal pt-20 pb-12 md:pt-28 md:pb-16 text-center">
+      <div class="max-w-4xl mx-auto px-6 flex flex-col items-center">
+        <!-- Eyebrow Pill -->
+        <div
+          class="inline-flex items-center gap-2 rounded-full border border-apple-border bg-apple-card/80 px-4 py-1.5 text-[11px] font-medium text-apple-muted backdrop-blur-md mb-6 shadow-sm">
+          <span class="h-1.5 w-1.5 rounded-full bg-apple-blue"></span>
+          <span>ARSITEKTUR &amp; TALENTA PRO MAX</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-6 apple-headline">
+          <span class="bg-gradient-to-r from-apple-text via-[#e5e5ea] to-apple-muted bg-clip-text text-transparent">Dua
+            Pikiran. Satu Standar Presisi.</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-apple-muted max-w-2xl font-normal leading-relaxed tracking-tight mb-8">
+          Mengenal duo engineer &amp; desainer di balik SIGMA Studio yang memadukan keindahan visual avant-garde dengan
+          rekayasa antarmuka web performa tinggi.
+        </p>
+
+        <!-- Quick Spec Metrics -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-3xl">
+          <div
+            class="rounded-apple-md border border-apple-border bg-apple-card/60 p-4 text-left backdrop-blur-md spotlight-card">
+            <span class="text-xl sm:text-2xl font-semibold text-white tracking-tight block">100%</span>
+            <span class="text-[11px] text-apple-muted">Komitmen Kolaboratif</span>
+          </div>
+          <div
+            class="rounded-apple-md border border-apple-border bg-apple-card/60 p-4 text-left backdrop-blur-md spotlight-card">
+            <span class="text-xl sm:text-2xl font-semibold text-apple-blue tracking-tight block">Clean Code</span>
+            <span class="text-[11px] text-apple-muted">Standar Semantik W3C</span>
+          </div>
+          <div
+            class="rounded-apple-md border border-apple-border bg-apple-card/60 p-4 text-left backdrop-blur-md spotlight-card">
+            <span class="text-xl sm:text-2xl font-semibold text-emerald-400 tracking-tight block">60 FPS</span>
+            <span class="text-[11px] text-apple-muted">Optimasi Interaksi</span>
+          </div>
+          <div
+            class="rounded-apple-md border border-apple-border bg-apple-card/60 p-4 text-left backdrop-blur-md spotlight-card">
+            <span class="text-xl sm:text-2xl font-semibold text-purple-400 tracking-tight block">Git Flow</span>
+            <span class="text-[11px] text-apple-muted">Branching Disiplin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION PROFIL TIM (#profil) — BENTO GRID SPOTLIGHT CARDS -->
+    <section id="profil" class="section-reveal py-16 border-t border-apple-border/50 bg-apple-dark/30">
+      <div class="max-w-5xl mx-auto px-6">
+
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-3">
+          <div>
+            <span class="text-xs font-semibold text-apple-blue uppercase tracking-wider block mb-1">Struktur
+              Organisasi</span>
+            <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight text-white">Profil Tim Kami</h2>
+          </div>
+          <p class="text-xs text-apple-muted max-w-xs sm:text-right">
+            Sinergi multidisiplin dalam arsitektur kode dan estetika antarmuka.
+          </p>
+        </div>
+
+        <!-- 2-COLUMN PRO MAX TEAM BENTO CARDS -->
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <!-- Kartu Profil 1: Rofi -->
+          <div
+            class="profil-card rounded-apple-lg border border-apple-border bg-apple-card p-6 sm:p-8 flex flex-col justify-between hover:border-apple-borderLight transition-all duration-200 spotlight-card group">
+            <div>
+              <!-- Header Card: Avatar & Status -->
+              <div class="flex items-start justify-between gap-4 mb-6">
+                <div class="relative">
+                  <div
+                    class="h-24 w-24 sm:h-28 sm:w-28 rounded-apple-md overflow-hidden border-2 border-white/10 bg-apple-black shadow-xl relative group-hover:border-apple-blue/50 transition-colors">
+                    <img src="images/foto-rofi.jpg.png" alt="Foto Profil Rofi"
+                      class="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-200">
+                  </div>
+                  <span
+                    class="absolute -bottom-1.5 -right-1.5 h-6 w-6 rounded-full bg-apple-blue text-white flex items-center justify-center text-[11px] shadow-md border-2 border-apple-black"
+                    title="UI Specialist">
+                    <i data-lucide="palette" class="w-3 h-3"></i>
+                  </span>
+                </div>
+
+                <div class="flex flex-col items-end gap-1.5">
+                  <span
+                    class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-medium font-mono">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>ONLINE</span>
+                  </span>
+                  <a href="https://github.com/rofimedia123" target="_blank" rel="noopener noreferrer"
+                    class="text-[11px] text-apple-subtle hover:text-white transition-colors flex items-center gap-1 font-mono">
+                    <i data-lucide="github" class="w-3 h-3"></i>
+                    <span>@rofimedia123</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Name & Role -->
+              <h3 class="text-2xl font-semibold text-white tracking-tight mb-1 group-hover:text-apple-blue transition-colors">
+                Rofi
+              </h3>
+              <p class="text-xs font-semibold text-apple-blue uppercase tracking-wider mb-4 flex items-center gap-1.5">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span><strong>Peran:</strong> Web Developer &amp; UI Designer</span>
+              </p>
+
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-apple-muted leading-relaxed mb-6">
+                Bertanggung jawab dalam merancang struktur kode HTML serta memastikan tampilan antarmuka web tetap bersih
+                dan nyaman dilihat pengguna.
+              </p>
+            </div>
+
+            <!-- Footer Meta / Badges -->
+            <div class="pt-5 border-t border-apple-border/60">
+              <span class="text-[10px] font-medium uppercase tracking-wider text-apple-subtle block mb-2.5">Fokus
+                Keahlian</span>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="text-[11px] px-2.5 py-1 rounded-apple-sm bg-apple-black/60 border border-apple-border text-white/90">HTML5
+                  Semantik</span>
+                <span
+                  class="text-[11px] px-2.5 py-1 rounded-apple-sm bg-apple-black/60 border border-apple-border text-white/90">UI
+                  Design System</span>
+                <span
+                  class="text-[11px] px-2.5 py-1 rounded-apple-sm bg-apple-black/60 border border-apple-border text-white/90">Ergonomi
+                  Visual</span>
+                <span
+                  class="text-[11px] px-2.5 py-1 rounded-apple-sm bg-apple-blue/10 border border-apple-blue/30 text-apple-blue font-medium">Branch
+                  feat/profil</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu Profil 2: Ridwan -->
+          <div
+            class="profil-card rounded-apple-lg border border-apple-border bg-apple-card p-6 sm:p-8 flex flex-col justify-between hover:border-apple-borderLight transition-all duration-200 spotlight-card group">
+            <div>
+              <!-- Header Card: Avatar & Status -->
+              <div class="flex items-start justify-between gap-4 mb-6">
+                <div class="relative">
+                  <div
+                    class="h-24 w-24 sm:h-28 sm:w-28 rounded-apple-md overflow-hidden border-2 border-white/10 bg-apple-black shadow-xl relative group-hover:border-apple-blue/50 transition-colors">
+                    <img src="images/foto-ridwan.jpg.png" alt="Foto Profil Ridwan"
+                      class="h-full w-full object-cover transform group-hover:scale-105 transition-transform duration-200">
+                  </div>
+                  <span
+                    class="absolute -bottom-1.5 -right-1.5 h-6 w-6 rounded-full bg-purple-500 text-white flex items-center justify-center text-[11px] shadow-md border-2 border-apple-black"
+                    title="Technical Architect">
+                    <i data-lucide="cpu" class="w-3 h-3"></i>
+                  </span>
+                </div>
+
+                <div class="flex flex-col items-end gap-1.5">
+                  <span
+                    class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[10px] font-medium font-mono">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>ONLINE</span>
+                  </span>
+                  <a href="https://github.com/MuhammadRidwan01" target="_blank" rel="noopener noreferrer"
+                    class="text-[11px] text-apple-subtle hover:text-white transition-colors flex items-center gap-1 font-mono">
+                    <i data-lucide="github" class="w-3 h-3"></i>
+                    <span>@muhammadridwan01</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Name & Role -->
+              <h3 class="text-2xl font-semibold text-white tracking-tight mb-1 group-hover:text-apple-blue transition-colors">
+                Ridwan
+              </h3>
+              <p class="text-xs font-semibold text-purple-400 uppercase tracking-wider mb-4 flex items-center gap-1.5">
+                <i data-lucide="terminal" class="w-3.5 h-3.5"></i>
+                <span><strong>Peran:</strong> Technical Specialist</span>
+              </p>
+
+              <!-- Description -->
+              <p class="text-xs sm:text-sm text-apple-muted leading-relaxed mb-6">
+                Fokus pada penyusunan logika konten, optimalisasi elemen halaman, serta mendukung pengintegrasian
+                fitur-fitur website secara keseluruhan.
+              </p>
+            </div>
+
+            <!-- Footer Meta / Badges -->
+            <div class="pt-5 border-t border-apple-border/60">
+              <span class="text-[10px] font-medium uppercase tracking-wider text-apple-subtle block mb-2.5">Fokus
+                Keahlian</span>
+              <div class="flex flex-wrap gap-1.5">
+                <span
+                  class="text-[11px] px-2.5 py-1 rounded-apple-sm bg-apple-black/60 border border-apple-border text-white/90">Logika
+                  Komponen</span>
+                <span
+                  class="text-[11px] px-2.5 py-1 rounded-apple-sm bg-apple-black/60 border border-apple-border text-white/90">Performa
+                  60 FPS</span>
+                <span
+                  class="text-[11px] px-2.5 py-1 rounded-apple-sm bg-apple-black/60 border border-apple-border text-white/90">Integrasi
+                  Sistem</span>
+                <span
+                  class="text-[11px] px-2.5 py-1 rounded-apple-sm bg-purple-500/10 border border-purple-500/30 text-purple-400 font-medium">Branch
+                  feat/beranda</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION TABEL OPERASIONAL — APPLE GLASS BENTO TABLE -->
+    <section class="section-reveal py-16 border-t border-apple-border/50 bg-apple-black">
+      <div class="max-w-4xl mx-auto px-6">
+
+        <div class="text-center mb-10">
+          <span class="text-xs font-semibold text-apple-blue uppercase tracking-wider block mb-1">Ketersediaan &amp;
+            Layanan</span>
+          <h3 class="text-2xl sm:text-3xl font-semibold tracking-tight text-white mb-2">Jadwal Operasional Tim</h3>
+          <p class="text-xs sm:text-sm text-apple-muted max-w-lg mx-auto">
+            Waktu aktif pelayanan konsultasi desain dan pengembangan web SIGMA Studio.
+          </p>
+        </div>
+
+        <!-- Apple Glass Container Table -->
+        <div class="rounded-apple-xl border border-apple-border bg-apple-card overflow-hidden shadow-2xl spotlight-card">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-apple-border bg-white/[0.02]">
+                  <th class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-apple-muted">
+                    <div class="flex items-center gap-2">
+                      <i data-lucide="calendar" class="w-3.5 h-3.5 text-apple-blue"></i>
+                      <span>Hari Kerja</span>
+                    </div>
+                  </th>
+                  <th class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-apple-muted">
+                    <div class="flex items-center gap-2">
+                      <i data-lucide="clock" class="w-3.5 h-3.5 text-apple-blue"></i>
+                      <span>Jam Pelayanan</span>
+                    </div>
+                  </th>
+                  <th class="py-4 px-6 text-xs font-semibold uppercase tracking-wider text-apple-muted text-right">
+                    <span>Status Operasional</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-apple-border/50 text-xs sm:text-sm">
+                <!-- Baris 1: Senin - Jumat -->
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="py-4 px-6 font-medium text-white">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="h-7 w-7 rounded-apple-sm bg-apple-blue/10 border border-apple-blue/20 text-apple-blue flex items-center justify-center text-xs font-mono font-semibold">
+                        01
+                      </span>
+                      <span>Senin - Jumat</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-apple-text font-mono text-xs">
+                    08.00 - 17.00 WIB
+                  </td>
+                  <td class="py-4 px-6 text-right">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px] font-medium">
+                      <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                      <span>Pelayanan Penuh</span>
+                    </span>
+                  </td>
+                </tr>
+
+                <!-- Baris 2: Sabtu -->
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="py-4 px-6 font-medium text-white">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="h-7 w-7 rounded-apple-sm bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center text-xs font-mono font-semibold">
+                        02
+                      </span>
+                      <span>Sabtu</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-apple-text font-mono text-xs">
+                    09.00 - 14.00 WIB
+                  </td>
+                  <td class="py-4 px-6 text-right">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/20 text-[11px] font-medium">
+                      <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+                      <span>Review &amp; Evaluasi</span>
+                    </span>
+                  </td>
+                </tr>
+
+                <!-- Baris 3: Minggu -->
+                <tr class="hover:bg-white/[0.02] transition-colors">
+                  <td class="py-4 px-6 font-medium text-apple-muted">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="h-7 w-7 rounded-apple-sm bg-white/5 border border-apple-border text-apple-subtle flex items-center justify-center text-xs font-mono font-semibold">
+                        03
+                      </span>
+                      <span>Minggu</span>
+                    </div>
+                  </td>
+                  <td class="py-4 px-6 text-apple-subtle font-mono text-xs">
+                    Libur (On-Call Darurat)
+                  </td>
+                  <td class="py-4 px-6 text-right">
+                    <span
+                      class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 text-apple-subtle border border-white/10 text-[11px] font-medium">
+                      <span>Tutup</span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Footer Info Strip -->
+          <div
+            class="p-4 bg-apple-dark/60 border-t border-apple-border flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-apple-muted">
+            <div class="flex items-center gap-2">
+              <i data-lucide="info" class="w-3.5 h-3.5 text-apple-blue"></i>
+              <span>Waktu respon rata-rata di bawah 2 jam selama jam operasional kerja.</span>
+            </div>
+            <div class="flex items-center gap-4 text-apple-subtle">
+              <span>Zona Waktu: WIB (UTC+7)</span>
+              <span>•</span>
+              <a href="index.html#kontak" class="text-apple-blue hover:underline font-medium">Jadwalkan Konsultasi →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div
+          class="mt-12 rounded-apple-xl border border-apple-border bg-gradient-to-r from-apple-card via-apple-dark to-apple-card p-6 sm:p-8 text-center relative overflow-hidden spotlight-card">
+          <div
+            class="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-40 bg-apple-blue/15 blur-3xl rounded-full"
+            aria-hidden="true"></div>
+          <span class="text-xs font-semibold text-apple-blue uppercase tracking-wider block mb-1">Kolaborasi
+            Proyek</span>
+          <h4 class="text-xl sm:text-2xl font-semibold text-white tracking-tight mb-3">Siap Merancang Produk Digital
+            Berikutnya?</h4>
+          <p class="text-xs sm:text-sm text-apple-muted max-w-md mx-auto mb-6">
+            Diskusikan kebutuhan ide, arsitektur antarmuka, dan estimasi waktu bersama tim kami hari ini.
+          </p>
+          <div class="flex items-center justify-center gap-3">
+            <a href="index.html#kontak"
+              class="inline-flex items-center gap-2 rounded-full text-xs font-medium bg-apple-blue hover:bg-apple-blueHover text-white px-5 py-2.5 transition-colors shadow-lg">
+              <span>Konsultasi Sekarang</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+            <a href="index.html#beranda"
+              class="inline-flex items-center gap-2 rounded-full text-xs font-medium border border-apple-border hover:border-apple-borderLight text-white px-5 py-2.5 transition-colors">
+              <span>Kembali ke Beranda</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- APPLE MINIMALIST FOOTER -->
+  <footer class="section-reveal border-t border-apple-border/40 bg-apple-dark py-10 text-xs text-apple-subtle">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b border-apple-border/40">
+        <div class="flex items-center gap-2 text-white font-medium">
+          <span
+            class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-white text-black text-[10px] font-bold">Σ</span>
+          <span>SIGMA Design Studio Pro Max</span>
+        </div>
+        <div class="flex items-center gap-6 text-[11px]">
+          <a href="index.html#beranda" class="hover:text-white transition-colors">Ikhtisar</a>
+          <a href="Profile.html" class="text-white transition-colors">Profil Tim</a>
+          <a href="index.html#profil" class="hover:text-white transition-colors">Keynote Layanan</a>
+          <a href="index.html#portofolio" class="hover:text-white transition-colors">Portofolio</a>
+          <a href="index.html#kalkulator" class="hover:text-white transition-colors">Kalkulator</a>
+          <a href="index.html#kontak" class="hover:text-white transition-colors">Konsultasi</a>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px]">
+        <p>&copy; 2026 SIGMA Studio. Seluruh hak cipta dilindungi undang-undang.</p>
+        <p>Tugas Akhir Basic Bootcamp Komandro — Project CBL</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PRO MAX INTERACTION SCRIPT -->
+  <script>
+    lucide.createIcons();
+
+    // 1. Dynamic Mouse Spotlight Effect
+    document.querySelectorAll('.spotlight-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+    });
+
+    // 2. GPU Scroll Reveal Observer
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.section-reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+
+</html>
